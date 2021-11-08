@@ -106,7 +106,7 @@ button{
     border:0mm;
     color: white;
     float:left;
-
+    cursor: pointer;
 }
 #button{
     width:100px;
