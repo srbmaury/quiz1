@@ -114,6 +114,7 @@ function showques(a){
         for(var i=1; i<=5; i++) 
                 document.getElementById(arr[i]).style.display="none";
         document.getElementById(a).style.display = "block";
+        document.getElementById("befres").style.display = "none";
 }
 
 
