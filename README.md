@@ -1,4 +1,4 @@
-#quiz1
+# quiz1
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -39,13 +39,15 @@
             <li>Navigate to the project directory: <code>cd quiz1</code></li>
             <li>Open the website in your browser: <code>index.html</code></li>
         </ol>
-        <p>Prerequisites:</p>
+      </section>
+    <section id="Prerequisites">
+        <h2>Prerequisites:<h2>
         <ul>
             <li>Good knowledge of HTML, CSS, and JavaScript</li>
             <li>Installation of Git</li>
         </ul>
         <p>That's it! You can now start using quiz1 to take quizzes and even contribute to its development.</p>
-    </section>
+       </section>
     <footer>
         <p>&copy; 2023 quiz1 - Quiz Taking Website</p>
     </footer>
