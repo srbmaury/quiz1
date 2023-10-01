@@ -149,7 +149,7 @@ function updateCountdown(){
 
 function showScore(){
         if(document.getElementById('check').checked || (min<=0 && sec<= 0)){
-                const container = document.getElementById("res");
+                const container = document.getElementById("board");
                 const fireworks = new Fireworks.default(container);
                 
                 for(var i=0; i<5; i++) res+=scoreAc[i];
