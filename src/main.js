@@ -149,6 +149,9 @@ function updateCountdown(){
 
 function showScore(){
         if(document.getElementById('check').checked || (min<=0 && sec<= 0)){
+                const container = document.getElementById("res");
+                const fireworks = new Fireworks.default(container);
+                
                 for(var i=0; i<5; i++) res+=scoreAc[i];
                 for(var i=0; i<5; i++) attempted+=attempt[i];
                 document.getElementById("totalQ").innerHTML = 5;
@@ -157,6 +160,9 @@ function showScore(){
                 document.getElementById("corrQ").innerHTML = res;
                 document.getElementById("wrongQ").innerHTML = attempted-res;
                 document.getElementById("body").style.width = "100%";
+                if(res >= 3) {
+                        fireworks.start();
+                }
                 showproblems.style.display = "none";
                 console.log(min);
                 console.log(sec);
