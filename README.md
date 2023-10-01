@@ -35,7 +35,7 @@
         <h2>Getting Started</h2>
         <p>To get started with quiz1, follow these steps:</p>
         <ol>
-            <li>Clone the repository: <code>git clone https://github.com/yourusername/quiz1.git</code></li>
+            <li>Clone the repository: <code>git clone  https://github.com/srbmaury/quiz1.git </code></li>
             <li>Navigate to the project directory: <code>cd quiz1</code></li>
             <li>Open the website in your browser: <code>index.html</code></li>
         </ol>
