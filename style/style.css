@@ -1,72 +1,81 @@
 @import url('https://fonts.googleapis.com/css2?family=Nunito:ital,wght@1,300&display=swap');
-*{
-    padding:0;
-    margin:0;
+
+* {
+    padding: 0;
+    margin: 0;
 }
+
 #body {
     background: linear-gradient(135deg, #71b7e6, #9b59b6);
     min-height: 100vh;
-    display:flex;
+    display: flex;
     justify-content: center;
     align-items: center;
-    width:100%;
+    width: 100%;
 }
-#showproblems{
-    background:linear-gradient(135deg, rgb(34, 230, 60),rgb(190, 190, 91));
+
+#showproblems {
+    background: linear-gradient(135deg, rgb(34, 230, 60), rgb(190, 190, 91));
     /* background: rgb(97, 226, 83); */
     margin-left: 75%;
     margin-top: -100vh;
     height: 100vh;
-    width:24.8%;
+    width: 24.8%;
     border-left: 2px solid black;
 }
-#board{
-    background:white;
-    width:65vmin;
-    height:35vmin;
+
+#board {
+    background: white;
+    width: 65vmin;
+    height: 35vmin;
     border-radius: 9px;
     padding-top: 30px;
     padding-left: 30px;
 }
-#typename{
-    margin-top:20px;
+
+#typename {
+    margin-top: 20px;
     margin-left: 19%;
     font-size: 30px;
 }
-#typename input{
-    width:300px;
-    height:30px;
+
+#typename input {
+    width: 300px;
+    height: 30px;
     margin-top: 40px;
     margin-left: -40px;
     border: 2px solid black;
-    border-radius:5px;
+    border-radius: 5px;
     padding-left: 4px;
 }
-#callByName{
+
+#callByName {
     float: right;
     margin-right: 0px;
     margin-top: -50px;
     background-color: white;
     border: 8px solid white;
     border-radius: 5px;
-    min-width:max-content;
+    min-width: max-content;
     min-height: 16px;
     color: black;
     text-transform: uppercase;
 }
-#countdown{
+
+#countdown {
     float: left;
-    margin-left:-30px;
+    margin-left: -30px;
     margin-top: -50px;
     background-color: white;
     border: 8px solid white;
     border-radius: 5px;
-    min-width:max-content;
+    min-width: max-content;
     min-height: 16px;
     color: black;
     text-transform: uppercase;
 }
-#intro{
+
+#intro {
     text-transform: uppercase;
     color: red;
     font-weight: 950;
@@ -74,51 +83,58 @@
     margin-top: -12px;
     margin-bottom: 20px;
 }
-ul{
-    color:black;
+
+ul {
+    color: black;
     margin-top: -10px;
     margin-left: 30px;
 }
-ul li{
-    margin-top:10px;
+
+ul li {
+    margin-top: 10px;
 }
-.title{
+
+.title {
     padding: 10px;
     padding-left: 14px;
     padding-right: 14px;
-    background-color:rgb(38, 230, 63);
-    border-radius:50px;
+    background-color: rgb(38, 230, 63);
+    border-radius: 50px;
 }
 
-#board span{
+#board span {
     font-weight: 900;
 }
-input{
+
+input {
     margin-top: 20px;
     margin-left: 40px;
 }
-button{
-    margin-top:16px;
-    width:48px;
-    height:28px;
+
+button {
+    margin-top: 16px;
+    width: 48px;
+    height: 28px;
     border-radius: 5px;
     background-color: blueviolet;
-    border:0mm;
+    border: 0mm;
     color: white;
-    float:left;
+    float: left;
     cursor: pointer;
 }
-#button{
-    width:100px;
-    float:right;
+
+#button {
+    width: 100px;
+    float: right;
     margin-right: 26px;
 }
 
-#res div{
-    margin-top:8px;
+#res div {
+    margin-top: 8px;
     font-weight: 900;
 }
-#problems{
+
+#problems {
     margin-left: 110px;
     padding-top: 60px;
     color: black;
@@ -126,72 +142,99 @@ button{
     width: 60px;
     padding-left: 30px;
 }
-#problems div{
+
+#problems div {
     background-color: white;
     margin-bottom: 25px;
     padding: 22px 22px;
-    font-size:15px;
+    font-size: 15px;
     cursor: pointer;
     border-radius: 50px;
     font-weight: 900;
 }
-#problems div pre{
+
+#problems div pre {
     margin-left: 4px;
 }
-#befres{
+
+#befres {
     margin-left: 10px;
     margin-top: 20px;
 }
-@media only screen and (max-width:1200px){
-    *{
+
+@media only screen and (max-width:1200px) {
+    * {
         font-size: 12px;
     }
-    #body{
+
+    #body {
         width: 100vw;
         background: white;
-        margin-left:-27px;
+        margin-left: -27px;
         margin-top: -50px;
         overflow: hidden;
-        height:100vh;
+        height: 100vh;
     }
-    #showproblems{
+
+    #showproblems {
         max-width: 0;
     }
-    #board{
+
+    #board {
         background-color: transparent;
     }
-    #showproblems, #problems, #statuss{
-        all:none;
-        width:0;
-        height:0;
+
+    #showproblems,
+    #problems,
+    #statuss {
+        all: none;
+        width: 0;
+        height: 0;
         visibility: hidden;
     }
-    .title{
+
+    .title {
         background-color: transparent;
     }
-    #username{
-        max-width:200px;
+
+    #username {
+        max-width: 200px;
     }
-    #typename div{
+
+    #typename div {
         font-size: 20px;
     }
-    #intro{
+
+    #intro {
         margin-top: -80px;
     }
-    #countdown{
+
+    #countdown {
         margin-left: 15px;
         margin-bottom: 50px;
     }
-    #callByName{
+
+    #callByName {
         margin-right: -1px;
     }
-    #q1,#q2,#q3,#q4,#q5{
+
+    #q1,
+    #q2,
+    #q3,
+    #q4,
+    #q5 {
         overflow: hidden;
     }
-    #befres button{
+
+    #befres button {
         max-width: 52px;
     }
-    #q1 button,#q2 button,#q3 button,#q4 button,#q5 button{
+
+    #q1 button,
+    #q2 button,
+    #q3 button,
+    #q4 button,
+    #q5 button {
         margin-left: 0px;
-    }    
+    }
 }
