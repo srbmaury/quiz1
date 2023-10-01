@@ -40,7 +40,7 @@
             <li>Open the website in your browser: <code>index.html</code></li>
         </ol>
       </section>
-    <section id="Prerequisites">
+    <section id="Prerequisite">
         <h2>Prerequisites:<h2>
         <ul>
             <li>Good knowledge of HTML, CSS, and JavaScript</li>
