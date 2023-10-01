@@ -1,4 +1,3 @@
-# quiz1
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -41,7 +40,8 @@
         </ol>
     </section>
     <section id="Prerequisites">
-        <h2>Prerequisites:</h2>
+        <h2><a href="https://git-scm.com/downloads" target="_blank">Prerequisites:</a></h2>
+        <p>Before you begin, ensure you have the following:</p>
         <ul>
             <li>Good knowledge of HTML, CSS, and JavaScript</li>
             <li>Installation of Git</li>
@@ -53,4 +53,5 @@
     </footer>
 </body>
 </html>
+
 
