@@ -3,6 +3,15 @@
     padding:0;
     margin:0;
 }
+#top{
+    
+    background: linear-gradient(135deg, #71b7e6, #9b59b6);
+    display:flex;
+    align-items: center;
+    width:100%;
+    
+    
+}
 #body {
     background: linear-gradient(135deg, #71b7e6, #9b59b6);
     min-height: 100vh;
@@ -10,6 +19,7 @@
     justify-content: center;
     align-items: center;
     width:100%;
+
 }
 #showproblems{
     background:linear-gradient(135deg, rgb(34, 230, 60),rgb(190, 190, 91));
