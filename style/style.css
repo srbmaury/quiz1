@@ -3,6 +3,21 @@
     padding:0;
     margin:0;
 }
+li {
+    display: inline;
+
+  }
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+a {
+    display: inline;
+    padding: 15px;
+    background-color: linear-gradient(135deg, #71b7e6, #582e69);
+}
+  
 #top{
     
     background: linear-gradient(135deg, #71b7e6, #9b59b6);
