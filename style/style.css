@@ -113,6 +113,16 @@ button{
     float:right;
     margin-right: 26px;
 }
+#button:hover{
+    color:rgb(21, 20, 20);
+    background-color: rgb(187,148,223);
+
+}
+#return:hover{
+    color:rgb(21, 20, 20);
+    background-color: rgb(187,148,223);
+
+}
 
 #res div{
     margin-top:8px;
