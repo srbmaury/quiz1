@@ -33,8 +33,14 @@
     padding-left: 30px;
 }
 
-#typename {
-    margin-top: 20px;
+#introduction{
+    padding-right: 10px;
+}
+#intro{
+    padding-left: 16px;
+}
+#typename{
+    margin-top:20px;
     margin-left: 19%;
     font-size: 30px;
 }
