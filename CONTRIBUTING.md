@@ -1,6 +1,6 @@
 # Contributing Guidelines
 
-Welcome to our open-source project! We appreciate your interest in contributing to our project. By contributing, you help us create a better software for everyone.
+Welcome to our open-source project! We appreciate your interest in contributing to our project. By contributing, you help us create better software for everyone.
 
 Before you start contributing, please take a moment to read the following guidelines to ensure a smooth and effective contribution process:
 
@@ -26,8 +26,7 @@ Before you start contributing, please take a moment to read the following guidel
 - Ensure you have an IDE installed on your local machine.
 - Fork the repository on GitHub.
 - Clone your forked repository locally: `git clone https://github.com/srbmaury/quiz1.git`
-- Change your directory to the project: `cd Quiz_App`
-- Install project dependencies: `npm install`
+- That's enough, you can start the work from here.
 
 ## How Can I Contribute?
 
@@ -41,7 +40,7 @@ If you have an idea for an enhancement, we welcome your input. Before creating a
 
 ### Working on Issues
 
-Feel free to pick any open issue from our [issue tracker](https://github.com/srbmaury/quiz1/issues) that you find interesting. Comment on the issue that you would like to work on it so that others are aware you are addressing it. If you need more context on a particular issue, please ask for clarification.
+Feel free to pick any open issue from our [issue tracker](https://github.com/srbmaury/quiz1/issues) that you find interesting. Comment on the issue that you would like to work on so that others know you are addressing it. If you need more context on a particular topic, please don't hesitate to ask for clarification.
 
 ### Submitting Pull Requests
 
