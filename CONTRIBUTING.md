@@ -26,7 +26,7 @@ Before you start contributing, please take a moment to read the following guidel
 - Ensure you have an IDE installed on your local machine.
 - Fork the repository on GitHub.
 - Clone your forked repository locally: `git clone https://github.com/srbmaury/quiz1.git`
-- That's enough, you can start the work from here.
+- Get into the folder, run: ```cd quiz1```
 
 ## How Can I Contribute?
 
