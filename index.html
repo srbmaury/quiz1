@@ -13,15 +13,15 @@
         <div id="board">
             <p id="countdown"></p>
 
-            <div id="typename">
+            <form id="typename" onsubmit="checkinitial(event,'typname','introduction')">
                 <div>Enter your Name</div>
                 <input type="text" name="" id="username" maxlength="15">
-                <button id="button" style="margin-top:52px; margin-left:40px;" onclick="checkinitial('typename','introduction')">Next</button>
-            </div>
+                <button type="submit" id="button" style="margin-top:52px; margin-left:40px;" >Next</button>
+            </form>
 
             <div id="callByName"> </div>
 
-            <div id="introduction">
+            <form id="introduction" onsubmit="onSubmitIntroduction(event)">
                 <p id="intro">General Instructions:</p>
                 <ul type="disc">
                     <li>There are 4 marks for each correct answer.</li>
@@ -30,10 +30,10 @@
                     <li>Paper will submit automatically if time runs out.</li>
                     <li>The response for a question won't be recorded until unless you click save and next/next button.</li>
                 </ul>
-                <button id="button" style="margin-top:15px;" onclick="startTimer(); showQue('introduction','q1')">Start test</button>
-            </div>
+                <button type="submit" id="button" style="margin-top:15px;">Start test</button>
+            </form>
 
-            <div id="q1">
+            <form id="q1" onsubmit="showQue('q1','q2',event)">
                 <span class="title">1</span>
                 <span>Which is the first letter of english alphabet?</span>
                 <div><input type="radio" name="opt1" id="opt11" onclick="addScore(0,1);">
@@ -48,10 +48,10 @@
                 <div><input type="radio" name="opt1" id="opt14" onclick="addScore(0,0);">
                 <label for="opt14">
                 D</label></div>
-                <button id="button" onclick="showQue('q1','q2')">Save and Next</button>
-            </div>
+                <button type="submit" id="button">Save and Next</button>
+            </form>
             
-            <div id="q2">
+            <form id="q2" onsubmit="showQue('q2','q3',event)">
                 <span class="title">2</span>
                 <span>Which is the last letter of english alphabet?</span>
                 <div><input type="radio" name="opt2" id="opt21" onclick="addScore(1,0);">
@@ -66,11 +66,11 @@
                 <div><input type="radio" name="opt2" id="opt24" onclick="addScore(1,1);">
                 <label for="opt24">
                 Z</label></div>
-                <button onclick="showPrev('q2','q1')">Prev</button>
-                <button id="button" onclick="showQue('q2','q3')">Save and Next</button>
-            </div>
+                <button type="button" onclick="showPrev('q2','q1')">Prev</button>
+                <button type="submit" id="button">Save and Next</button>
+                </form>
 
-            <div id="q3">
+            <form id="q3" onsubmit="showQue('q3','q4',event)">
                 <span class="title">3</span>
                 <span>Which of these is a semi-vowel?</span>
                 <div><input type="radio" name="opt3" id="opt31" onclick="addScore(2,0)">
@@ -85,11 +85,11 @@
                 <div><input type="radio" name="opt3" id="opt34" onclick="addScore(2,0)">
                 <label for="opt34">
                 Z</label></div>
-                <button onclick="showPrev('q3','q2')">Prev</button>
-                <button id="button" onclick="showQue('q3','q4')">Save and Next</button>
-            </div>
+                <button type="button" onclick="showPrev('q3','q2')">Prev</button>
+                <button id="button" type="submit">Save and Next</button>
+            </form>
 
-            <div id="q4">
+            <form id="q4" onsubmit="showQue('q4','q5',event)">
                 <span class="title">4</span>
                 <span>How many letters are there in english alphabet?</span>
                 <div><input type="radio" name="opt4" id="opt41" onclick="addScore(3,0)">
@@ -104,11 +104,11 @@
                 <div><input type="radio" name="opt4" id="opt44" onclick="addScore(3,0)">
                 <label for="opt44">
                 23</label></div>
-                <button onclick="showPrev('q4','q3')">Prev</button>
-                <button id="button" onclick="showQue('q4','q5')">Save and Next</button>
-            </div>
+                <button type="button" onclick="showPrev('q4','q3')">Prev</button>
+                <button id="button" type="submit">Save and Next</button>
+            </form>
 
-            <div id="q5">
+            <form id="q5" onsubmit="showQue('q5','befres',event)">
                 <span class="title">5</span>
                 <span>What is 13<sup>th</sup> letter of alphabet?</span>
                 <div><input type="radio" name="5" id="opt51" onclick="addScore(4,0)">
@@ -123,16 +123,16 @@
                 <div><input type="radio" name="5" id="opt54" onclick="addScore(4,1)">
                 <label for="opt54">
                 M</label></div>
-                <button onclick="showPrev('q5','q4')">Prev</button>
-                <button id="button" onclick="showQue('q5','befres');">Save Response</button>
-            </div>
+                <button type="button" onclick="showPrev('q5','q4')">Prev</button>
+                <button id="button" type="submit">Save Response</button>
+            </form>
 
-            <div id="befres">
+            <form id="befres" onsubmit="onSubmitBefres(event)">
                 <div>   Your responses have been recorded. </div>
                 <div><input type="checkbox" name="check" id="check"> <label for="check">Check this before submitting</label></div>
-                <button id="return" style="margin-top:90px; width:100px;" onclick="showPrev('befres','q5')">Return</button>
-                <button id="button" style="margin-top:90px;" onclick="showQue('befres','res'); showScore()">Submit</button>
-            </div>
+                <button id="return" type="button" style="margin-top:90px; width:100px;" onclick="showPrev('befres','q5')">Return</button>
+                <button id="button" type="submit" style="margin-top:90px;" >Submit</button>
+            </form>
             
             <div id="res">
                 <pre><div>Total Number of questions : <span id="totalQ"></span></div></pre>

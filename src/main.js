@@ -50,8 +50,10 @@ function showPrev(a, b) {
  * 
  * @param {*} a 
  * @param {*} b 
+ * @param {event} event
  */
-function showQue(a, b) {
+function showQue(a, b,event={}) {
+        event.preventDefault && event.preventDefault(); 
         const callByNameElement = document.getElementById("callByName");
       
         if (b === 'introduction') {
@@ -100,10 +102,11 @@ function reload() {
 
 /**
  * 
- * @param {*} a 
- * @param {*} b 
+ * @param {event} event 
+ * 
  */
-function checkinitial(a, b) {
+function checkinitial(event) {
+        event.preventDefault();
         if (document.getElementById("username").value == "")
                 alert("Please enter your name");
         else {
@@ -111,7 +114,7 @@ function checkinitial(a, b) {
                 var s = document.getElementById("username").value;
                 document.getElementById("callByName").innerHTML = s;
                 // document.getElementById("callByName").style.display = "block";    /*--------------------*/
-                showQue(a, b);
+                showQue('typename', 'introduction');
         }
 }
 
@@ -206,4 +209,17 @@ function showScore() {
                 console.log(min);
                 console.log(sec);
         }
+}
+
+function onSubmitIntroduction(event){
+        event.preventDefault();
+        showQue("introduction", "q1");
+        startTimer();
+}
+
+
+function onSubmitBefres(event){
+        event.preventDefault();
+        showQue("befres", "res");
+        showScore();
 }
