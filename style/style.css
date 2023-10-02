@@ -1,256 +1,220 @@
-@import url('https://fonts.googleapis.com/css2?family=Nunito:ital,wght@1,300&display=swap');
-
+@import url("https://fonts.googleapis.com/css2?family=Nunito:ital,wght@1,300&display=swap");
 * {
-    padding: 0;
-    margin: 0;
+  padding: 0;
+  margin: 0;
 }
 
 #body {
-    background: linear-gradient(135deg, #71b7e6, #9b59b6);
-    min-height: 100vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 100%;
+  font-family: sans-serif;
+  background-image: url("../../images/background.png");
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-size: cover;
+  height: 100vh;
 }
-
 #showproblems {
-    background: linear-gradient(135deg, rgb(34, 230, 60), rgb(190, 190, 91));
-    /* background: rgb(97, 226, 83); */
-    margin-left: 75%;
-    margin-top: -100vh;
-    height: 100vh;
-    width: 24.8%;
-    border-left: 2px solid black;
+  margin-left: 75%;
+  margin-top: -100vh;
+  height: 100vh;
+  width: 24.8%;
+  z-index: 9;
 }
-
 #board {
-    background: white;
-    width: 65vmin;
-    height: 35vmin;
-    border-radius: 9px;
-    padding-top: 30px;
-    padding-left: 30px;
+  background: rgba(255, 255, 255, 0.11);
+  width: 30rem;
+  border-radius: 6px;
+  box-shadow: 10px 10px 8px #0000004b;
+  padding: 2rem;
+  backdrop-filter: blur(4px);
 }
-
-#introduction{
-    padding-right: 10px;
+#typename {
+  font-size: 1.5rem;
+  color: rgb(50, 3, 110);
+  margin: 2rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
 }
-#intro{
-    padding-left: 16px;
-}
-#typename{
-    margin-top:20px;
-    margin-left: 19%;
-    font-size: 30px;
-}
-
 #typename input {
-    width: 300px;
-    height: 30px;
-    margin-top: 40px;
-    margin-left: -40px;
-    border: 2px solid black;
-    border-radius: 5px;
-    padding-left: 4px;
+  padding: 8px 1rem;
+  color: #2c2c2c;
+  outline: none;
+  width: 70%;
+  border-radius: 2px;
+  border: none;
 }
-
 #callByName {
-    float: right;
-    margin-right: 0px;
-    margin-top: -50px;
-    background-color: white;
-    border: 8px solid white;
-    border-radius: 5px;
-    min-width: max-content;
-    min-height: 16px;
-    color: black;
-    text-transform: uppercase;
+  display: none;
+  float: right;
+  margin-right: 0px;
+  margin-top: -50px;
+  background-color: white;
+  border: 8px solid white;
+  border-radius: 5px;
+  min-width: max-content;
+  min-height: 16px;
+  color: black;
+  text-transform: uppercase;
 }
-
 #countdown {
-    float: left;
-    margin-left: -30px;
-    margin-top: -50px;
-    background-color: white;
-    border: 8px solid white;
-    border-radius: 5px;
-    min-width: max-content;
-    min-height: 16px;
-    color: black;
-    text-transform: uppercase;
+  float: left;
+  margin-left: -30px;
+  margin-top: -50px;
+  background-color: white;
+  border: 8px solid white;
+  border-radius: 5px;
+  min-width: max-content;
+  min-height: 16px;
+  color: black;
+  text-transform: uppercase;
 }
 
 #intro {
-    text-transform: uppercase;
-    color: red;
-    font-weight: 950;
-    font-size: 16px;
-    margin-top: -12px;
-    margin-bottom: 20px;
+  text-transform: uppercase;
+  color: rgb(43, 43, 43);
+  font-weight: 950;
+  font-size: 16px;
+  margin-top: -12px;
+  margin-bottom: 20px;
 }
-
 ul {
-    color: black;
-    margin-top: -10px;
-    margin-left: 30px;
+  color: black;
+margin: 1rem 2rem;
 }
-
 ul li {
-    margin-top: 10px;
+  margin-top: 10px;
 }
-
 .title {
-    padding: 10px;
-    padding-left: 14px;
-    padding-right: 14px;
-    background-color: rgb(38, 230, 63);
-    border-radius: 50px;
+  color: #1f1f1f;
+  padding: 1rem;
+  border-radius: 45%;
+  background-color: #ffffff3d;
+  margin-right: 5px;
+  font-weight: bold;
 }
-
-#board span {
-    font-weight: 900;
+#question{
+margin-left: 1rem;
+font-weight: 700;
 }
 
 input {
-    margin-top: 20px;
-    margin-left: 40px;
+  margin-top: 20px;
+  margin-left: 40px;
 }
-
 button {
-    margin-top: 16px;
-    width: 48px;
-    height: 28px;
-    border-radius: 5px;
-    background-color: blueviolet;
-    border: 0mm;
-    color: white;
-    float: left;
-    cursor: pointer;
+  background-color: blueviolet;
+  padding: 5px 1.8rem;
+  border: none;
+  border-radius: 4px;
+  color: #fff;
+  font-size: 1.2rem;
+  cursor: pointer;
+  margin-top: 1rem;
+  transition: all .3s;
+  box-shadow: 4px 6px 8px #0000004b;
+text-align: center;
 }
-
-#button {
-    width: 100px;
-    float: right;
-    margin-right: 26px;
-}
-#button:hover{
-    color:rgb(21, 20, 20);
-    background-color: rgb(187,148,223);
+button:hover{
+    transform: translateY(4px);
 
 }
-#return:hover{
-    color:rgb(21, 20, 20);
-    background-color: rgb(187,148,223);
+button:active{
+    transform: translateY(-1px);
+    box-shadow: 4px 2px 4px #0000006e;
 
 }
+
 
 #res div {
-    margin-top: 8px;
-    font-weight: 900;
+  margin-top: 8px;
+  font-weight: 900;
 }
-
 #problems {
-    margin-left: 110px;
-    padding-top: 60px;
-    color: black;
-    font-weight: 700px;
-    width: 60px;
-    padding-left: 30px;
+  margin-left: 110px;
+  padding-top: 60px;
+  color: black;
+  font-weight: 700px;
+  width: 60px;
+  padding-left: 30px;
 }
-
 #problems div {
-    background-color: white;
-    margin-bottom: 25px;
-    padding: 22px 22px;
-    font-size: 15px;
-    cursor: pointer;
-    border-radius: 50px;
-    font-weight: 900;
+  background-color: white;
+  margin-bottom: 25px;
+  padding: 22px 22px;
+  font-size: 15px;
+  cursor: pointer;
+  border-radius: 50px;
+  font-weight: 900;
 }
-
 #problems div pre {
-    margin-left: 4px;
+  margin-left: 4px;
 }
-
 #befres {
-    margin-left: 10px;
-    margin-top: 20px;
+  margin-left: 10px;
+  margin-top: 20px;
 }
-
-@media only screen and (max-width:1200px) {
-    * {
-        font-size: 12px;
-    }
-
-    #body {
-        width: 100vw;
-        background: white;
-        margin-left: -27px;
-        margin-top: -50px;
-        overflow: hidden;
-        height: 100vh;
-    }
-
-    #showproblems {
-        max-width: 0;
-    }
-
-    #board {
-        background-color: transparent;
-    }
-
-    #showproblems,
-    #problems,
-    #statuss {
-        all: none;
-        width: 0;
-        height: 0;
-        visibility: hidden;
-    }
-
-    .title {
-        background-color: transparent;
-    }
-
-    #username {
-        max-width: 200px;
-    }
-
-    #typename div {
-        font-size: 20px;
-    }
-
-    #intro {
-        margin-top: -80px;
-    }
-
-    #countdown {
-        margin-left: 15px;
-        margin-bottom: 50px;
-    }
-
-    #callByName {
-        margin-right: -1px;
-    }
-
-    #q1,
-    #q2,
-    #q3,
-    #q4,
-    #q5 {
-        overflow: hidden;
-    }
-
-    #befres button {
-        max-width: 52px;
-    }
-
-    #q1 button,
-    #q2 button,
-    #q3 button,
-    #q4 button,
-    #q5 button {
-        margin-left: 0px;
-    }
+@media only screen and (max-width: 1200px) {
+  * {
+    font-size: 12px;
+  }
+  #body {
+    width: 100vw;
+    background: white;
+    margin-left: -27px;
+    margin-top: -50px;
+    overflow: hidden;
+    height: 100vh;
+  }
+  #showproblems {
+    max-width: 0;
+  }
+  #board {
+    background-color: transparent;
+  }
+  #showproblems,
+  #problems,
+  #statuss {
+    all: none;
+    width: 0;
+    height: 0;
+    visibility: hidden;
+  }
+  .title {
+    background-color: transparent;
+  }
+  #username {
+    max-width: 200px;
+  }
+  #typename div {
+    font-size: 20px;
+  }
+  #intro {
+    margin-top: -80px;
+  }
+  #countdown {
+    margin-left: 15px;
+    margin-bottom: 50px;
+  }
+  #callByName {
+    margin-right: -1px;
+  }
+  #q1,
+  #q2,
+  #q3,
+  #q4,
+  #q5 {
+    overflow: hidden;
+  }
+  #befres button {
+    max-width: 52px;
+  }
+  #q1 button,
+  #q2 button,
+  #q3 button,
+  #q4 button,
+  #q5 button {
+    margin-left: 0px;
+  }
 }
