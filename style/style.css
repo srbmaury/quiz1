@@ -27,7 +27,7 @@
 #board {
     background: white;
     width: 65vmin;
-    height: 35vmin;
+    height: 57vmin;
     border-radius: 9px;
     padding-top: 30px;
     padding-left: 30px;
@@ -133,6 +133,7 @@ button {
     width: 100px;
     float: right;
     margin-right: 26px;
+    /* border-radius: 10%; */
 }
 #button:hover{
     color:rgb(21, 20, 20);
@@ -254,3 +255,6 @@ button {
         margin-left: 0px;
     }
 }
+
+
+
