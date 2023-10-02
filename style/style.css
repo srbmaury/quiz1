@@ -113,11 +113,18 @@ button{
     color: white;
     float:left;
     cursor: pointer;
+
 }
+
+button:hover{
+    transform: scale(1.1);
+}
+
 #button{
     width:100px;
     float:right;
     margin-right: 26px;
+
 }
 
 #res div{
