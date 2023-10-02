@@ -109,7 +109,6 @@ function checkinitial(a, b) {
         else {
 
                 var s = document.getElementById("username").value;
-                console.log(s);
                 document.getElementById("callByName").innerHTML = s;
                 // document.getElementById("callByName").style.display = "block";    /*--------------------*/
                 showQue(a, b);
@@ -154,8 +153,7 @@ function updateCountdown() {
 
         countdown.innerHTML = `${minutes}:${seconds}`;
         time--;
-
-        if (minutes === 0 && seconds === 0) {
+        if (minutes == 0 && seconds == 0) {
                 alert("Time Up");
 
                 for (let i = 1; i <= 5; i++) {
