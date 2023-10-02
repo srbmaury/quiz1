@@ -64,7 +64,7 @@ function showQue(a, b) {
         const currentIndex = questionIndexes.indexOf(a);
       
         if (currentIndex !== -1 && attemp[currentIndex] === 1) {
-          document.getElementById(a + '1').style.border = "2px solid #0000FF";
+          document.getElementById(a + '1').style.border = "3.5px solid green";
           attempt[currentIndex] = 1;
           scoreAc[currentIndex] = score[currentIndex];
         }
