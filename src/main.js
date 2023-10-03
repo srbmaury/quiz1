@@ -223,8 +223,15 @@ function setStyleDisplay(style, ...elements) {
    */
   function checkinitial(event,a, b) {
     event.preventDefault && event.preventDefault();
-    if (document.getElementById("username").value == "")
-      alert("Please enter your name");
+    const errorElement = document.getElementById("errormsg");
+    if (document.getElementById("username").value == ""){
+      errorElement.classList.add("show")
+      errorElement.innerHTML = `<span class="material-symbols-outlined">error</span> Please Enter your name`;
+      setTimeout(()=>{
+        // this is for removing error msg for better UI
+      errorElement.classList.remove("show")
+      },2000)
+    }
     else {
 
       var s = document.getElementById("username").value;
