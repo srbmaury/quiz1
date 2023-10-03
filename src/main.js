@@ -4,7 +4,7 @@
  * @param  {...any} elements
  */
 function setStyleDisplay(style, ...elements) {
-    elements.forEach((element) => {
+    elements.forEach(element => {
       element.style.display = style;
     });
   }
@@ -59,7 +59,9 @@ function setStyleDisplay(style, ...elements) {
   var questionsHtml = document.getElementById("questions");
   
   quizQuestions.forEach((item) => {
-    questionsHtml.innerHTML += `<div id="q${item.id}">
+    questionsHtml.innerHTML += `<form id="q${item.id}" onsubmit="showQue('q${
+      item.id
+    }','${item.id == quizQuestions.length ? "befres" : "q" + (item.id + 1)}',event)">
             <span class="title">${item.id}</span>
             <span>${item.title}</span>
             <div>
@@ -67,7 +69,9 @@ function setStyleDisplay(style, ...elements) {
                 type="radio"
                 name="opt${item.id}"
                 id="opt${item.id}1"
-                onclick="addScore(${item.id - 1},${item.correct === 1 ? 1 : 0});"
+                onclick="addScore(${item.id - 1},${
+      item.correct === 1 ? 1 : 0
+    });"
               />
               <label for="opt${item.id}1"> ${item.op1}</label>
             </div>
@@ -76,7 +80,9 @@ function setStyleDisplay(style, ...elements) {
                 type="radio"
                 name="opt${item.id}"
                 id="opt${item.id}2"
-                onclick="addScore(${item.id - 1},${item.correct === 2 ? 1 : 0});"
+                onclick="addScore(${item.id - 1},${
+      item.correct === 2 ? 1 : 0
+    });"
               />
               <label for="opt${item.id}2">  ${item.op2}</label>
             </div>
@@ -85,7 +91,9 @@ function setStyleDisplay(style, ...elements) {
                 type="radio"
                 name="opt${item.id}"
                 id="opt${item.id}3"
-                onclick="addScore(${item.id - 1},${item.correct === 3 ? 1 : 0});"
+                onclick="addScore(${item.id - 1},${
+      item.correct === 3 ? 1 : 0
+    });"
               />
               <label for="opt${item.id}3">  ${item.op3}</label>
             </div>
@@ -94,7 +102,9 @@ function setStyleDisplay(style, ...elements) {
                 type="radio"
                 name="opt${item.id}"
                 id="opt${item.id}4"
-                onclick="addScore(${item.id - 1},${item.correct === 4 ? 1 : 0});"
+                onclick="addScore(${item.id - 1},${
+      item.correct === 4 ? 1 : 0
+    });"
               />
          
              
@@ -102,32 +112,29 @@ function setStyleDisplay(style, ...elements) {
             </div>
                  ${
                    item.id > 1
-                     ? `<button onclick="showPrev('q${item.id}','q${
-                         item.id - 1
-                       }')">Prev</button>`
+                     ? `<button type="button" onclick="showPrev('q${
+                         item.id
+                       }','q${item.id - 1}')">Prev</button>`
                      : ``
                  }
-            <button id="button" onclick="showQue('q${item.id}','${
-      item.id == quizQuestions.length ? "befres" : "q" + (item.id + 1)
-    }')">
+            <button id="button" type="submit">
               Save and Next
             </button>
-          </div>`;
+          </form>`;
   });
-  console.log(questionsHtml.innerHTML);
+
   
   var arr = [];
-  for (var i = 1; i <= 5; i++) arr[i] = "q" + i;
-  
-  for (var i = 1; i <= 5; i++)
-    setStyleDisplay("none", document.getElementById(arr[i]));
+  for (var i = 1; i <= 5; i++) arr[i] = 'q' + i;
+  for (var i = 1; i <= 5; i++) setStyleDisplay("none", document.getElementById(arr[i]));
   var res = document.getElementById("res");
   var introduction = document.getElementById("introduction");
-  var showproblems = document.getElementById("showproblems");
-  var befres = document.getElementById("befres");
-  var countdown = document.getElementById("countdown");
+  var showproblems = document.getElementById('showproblems');
+  var befres = document.getElementById('befres');
+  var countdown = document.getElementById('countdown');
   
   setStyleDisplay("none", res, introduction, showproblems, befres, countdown);
+
   
   var attempt = [0, 0, 0, 0, 0];
   var attemp = [0, 0, 0, 0, 0];
@@ -158,11 +165,13 @@ function setStyleDisplay(style, ...elements) {
    *
    * @param {*} a
    * @param {*} b
+   * @param {event} event
    */
-  function showQue(a, b) {
+  function showQue(a, b,event={}) {
+    event.preventDefault && event.preventDefault();
     const callByNameElement = document.getElementById("callByName");
   
-    if (b === "introduction") {
+    if (b === 'introduction') {
       setStyleDisplay("none", callByNameElement);
     } else {
       setStyleDisplay("", callByNameElement);
@@ -172,33 +181,35 @@ function setStyleDisplay(style, ...elements) {
     const currentIndex = questionIndexes.indexOf(a);
   
     if (currentIndex !== -1 && attemp[currentIndex] === 1) {
-      document.getElementById(a + "1").style.border = "2px solid #0000FF";
+      document.getElementById(a + '1').style.border = "2px solid #0000FF";
       attempt[currentIndex] = 1;
       scoreAc[currentIndex] = score[currentIndex];
     }
   
     if (b === "q1") {
       document.getElementById("body").style.width = "75%";
-      setStyleDisplay("block", document.getElementById("showproblems"));
+      setStyleDisplay("block", document.getElementById('showproblems'));
     }
   
-    if (a === "befres" && b === "res") {
-      if (document.getElementById("check").checked) {
+    if (a === 'befres' && b === 'res') {
+      if (document.getElementById('check').checked) {
         setStyleDisplay("none", document.getElementById(a));
         setStyleDisplay("block", document.getElementById(b));
         time = Infinity;
         setStyleDisplay("none", countdown);
       } else {
-        alert("Kindly check the checkbox before clicking the submit button");
+        alert('Kindly check the checkbox before clicking the submit button');
       }
     } else {
       setStyleDisplay("none", document.getElementById(a));
       setStyleDisplay("block", document.getElementById(b));
     }
   }
+
   
   var res = 0;
   var attempted = 0;
+
   
   function reload() {
     window.location.reload();
@@ -206,13 +217,16 @@ function setStyleDisplay(style, ...elements) {
   
   /**
    *
+   * @param {event} event 
    * @param {*} a
    * @param {*} b
    */
-  function checkinitial(a, b) {
+  function checkinitial(event,a, b) {
+    event.preventDefault && event.preventDefault();
     if (document.getElementById("username").value == "")
       alert("Please enter your name");
     else {
+
       var s = document.getElementById("username").value;
       document.getElementById("callByName").innerHTML = s;
       // document.getElementById("callByName").style.display = "block";    /*--------------------*/
@@ -225,7 +239,7 @@ function setStyleDisplay(style, ...elements) {
     if (document.getElementById("username").value == "")
       setStyleDisplay("none", introname);
     else {
-      setStyleDisplay("block", introname);
+      setStyleDisplay("block", introname)
     }
   }
   
@@ -239,13 +253,14 @@ function setStyleDisplay(style, ...elements) {
     setStyleDisplay("block", document.getElementById(a));
     setStyleDisplay("none", document.getElementById("befres"));
   }
+
   
   const startingMinutes = 1;
   let time = startingMinutes * 60;
   
   function startTimer() {
     setInterval(updateCountdown, 1000);
-    setStyleDisplay("block", document.getElementById("countdown"));
+    setStyleDisplay("block", document.getElementById('countdown'));
   }
   
   var min, sec;
@@ -253,7 +268,7 @@ function setStyleDisplay(style, ...elements) {
   function updateCountdown() {
     const minutes = Math.floor(time / 60);
     let seconds = time % 60;
-    seconds = seconds < 10 ? "0" + seconds : seconds;
+    seconds = seconds < 10 ? '0' + seconds : seconds;
   
     countdown.innerHTML = `${minutes}:${seconds}`;
     time--;
@@ -272,9 +287,11 @@ function setStyleDisplay(style, ...elements) {
       showScore();
     }
   }
+
+
   
   function showScore() {
-    const checkElement = document.getElementById("check");
+    const checkElement = document.getElementById('check');
     const container = document.getElementById("board");
   
     if (checkElement.checked || (min <= 0 && sec <= 0)) {
@@ -293,8 +310,7 @@ function setStyleDisplay(style, ...elements) {
       }
   
       document.getElementById("totalQ").innerHTML = numQuestions;
-      document.getElementById("totalS").innerHTML =
-        numQuestions * res - attempted;
+      document.getElementById("totalS").innerHTML = numQuestions * res - attempted;
       document.getElementById("attemtQ").innerHTML = attempted;
       document.getElementById("corrQ").innerHTML = res;
       document.getElementById("wrongQ").innerHTML = attempted - res;
@@ -310,3 +326,16 @@ function setStyleDisplay(style, ...elements) {
       console.log(sec);
     }
   }
+
+function onSubmitIntroduction(event){
+  event.preventDefault();
+  showQue("introduction", "q1");
+  startTimer();
+}
+
+
+function onSubmitBefres(event){
+  event.preventDefault();
+  showQue("befres", "res");
+  showScore();
+}

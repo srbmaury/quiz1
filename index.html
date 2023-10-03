@@ -1,113 +1,67 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
+<head>
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Quiz</title>
     <link rel="stylesheet" href="style/style.css" />
     <script src="https://cdn.jsdelivr.net/npm/fireworks-js@2.x/dist/index.umd.js"></script>
-  </head>
-  <body>
+</head>
+<body>
     <div id="body">
-      <div id="board">
-        <p id="countdown"></p>
+        <div id="board">
+            <p id="countdown"></p>
 
-        <div id="typename">
-          <div>Enter your Name</div>
-          <input type="text" name="" id="username" maxlength="15" />
-          <button
-            id="button"
-            style="margin-top: 52px; margin-left: 40px"
-            onclick="checkinitial('typename','introduction')"
-          >
-            Next
-          </button>
-        </div>
+        <form id="typename" onsubmit="checkinitial(event,'typename','introduction')">
+                <div>Enter your Name</div>
+                <input type="text" name="" id="username" maxlength="15">
+                <button type="submit" id="button" style="margin-top:52px; margin-left:40px;" >Next</button>
+            </form>
 
-        <div id="callByName"></div>
+            <div id="callByName"> </div>
 
-        <div id="introduction">
-          <p id="intro">General Instructions:</p>
-          <ul type="disc">
-            <li>There are 4 marks for each correct answer.</li>
-            <li>There is 1 negative mark for each wrong answer.</li>
-            <li>Total time for the test is 1 minute.</li>
-            <li>Paper will submit automatically if time runs out.</li>
-            <li>
-              The response for a question won't be recorded until unless you
-              click save and next/next button.
-            </li>
-          </ul>
-          <button
-            id="button"
-            style="margin-top: 15px"
-            onclick="startTimer(); showQue('introduction','q1')"
-          >
-            Start test
-          </button>
-        </div>
+            <form id="introduction" onsubmit="onSubmitIntroduction(event)">
+                <p id="intro">General Instructions:</p>
+                <ul type="disc">
+                    <li>There are 4 marks for each correct answer.</li>
+                    <li>There is 1 negative mark for each wrong answer.</li>
+                    <li>Total time for the test is 1 minute.</li>
+                    <li>Paper will submit automatically if time runs out.</li>
+                    <li>The response for a question won't be recorded until unless you click save and next/next button.</li>
+                </ul>
+                <button type="submit" id="button" style="margin-top:15px;">Start test</button>
+            </form>
         <div id="questions"></div>
-        <div id="befres">
-          <div>Your responses have been recorded.</div>
-          <div>
-            <input type="checkbox" name="check" id="check" />
-            <label for="check">Check this before submitting</label>
-          </div>
-          <button
-            id="return"
-            style="margin-top: 90px; width: 100px"
-            onclick="showPrev('befres','q5')"
-          >
-            Return
-          </button>
-          <button
-            id="button"
-            style="margin-top: 90px"
-            onclick="showQue('befres','res'); showScore()"
-          >
-            Submit
-          </button>
-        </div>
+            <form id="befres" onsubmit="onSubmitBefres(event)">
+                <div>   Your responses have been recorded. </div>
+                <div><input type="checkbox" name="check" id="check"> <label for="check">Check this before submitting</label></div>
+                <button id="return" type="button" style="margin-top:90px; width:100px;" onclick="showPrev('befres','q5')">Return</button>
+                <button id="button" type="submit" style="margin-top:90px;" >Submit</button>
+            </form>
+            
+            <div id="res">
+                <pre><div>Total Number of questions : <span id="totalQ"></span></div></pre>
+                <pre><div>Questions attempted       : <span id="attemtQ"></span></div></pre>
+                <pre><div>Correct answers           : <span id="corrQ"></span></div></pre>
+                <pre><div>Wrong answers             : <span id="wrongQ"></span></div></pre>
+                <pre><div>Total score               : <span id="totalS"></span></div></pre>
+                <button id="button" style="margin-top:60px;" onclick="reload()">Try Again</button>
+            </div>
 
-        <div id="res">
-          <pre><div>Total Number of questions : <span id="totalQ"></span></div></pre>
-          <pre><div>Questions attempted       : <span id="attemtQ"></span></div></pre>
-          <pre><div>Correct answers           : <span id="corrQ"></span></div></pre>
-          <pre><div>Wrong answers             : <span id="wrongQ"></span></div></pre>
-          <pre><div>Total score               : <span id="totalS"></span></div></pre>
-          <button id="button" style="margin-top: 60px" onclick="reload()">
-            Try Again
-          </button>
         </div>
-      </div>
     </div>
 
     <div id="showproblems">
-      <div id="problems">
-        <div
-          id="stauss"
-          style="
-            width: 50px;
-            padding-left: 30px;
-            align-content: center;
-            cursor: auto;
-            margin-left: -12px;
-            border-radius: 0;
-            padding-top: 5px;
-            padding-bottom: 5px;
-          "
-        >
-          Status
+        <div id="problems">
+            <div id="stauss" style="width:50px; padding-left:30px; align-content:center; cursor:auto; margin-left:-12px; border-radius:0; padding-top:5px; padding-bottom:5px;">Status</div>
+            <div id="q11" onclick="showques('q1')"> <pre>1</pre></div>
+            <div id="q21" onclick="showques('q2')"> <pre>2</pre></div>
+            <div id="q31" onclick="showques('q3')"> <pre>3</pre></div>
+            <div id="q41" onclick="showques('q4')"> <pre>4</pre></div>
+            <div id="q51" onclick="showques('q5')"> <pre>5</pre></div>
         </div>
-        <div id="q11" onclick="showques('q1')"><pre>1</pre></div>
-        <div id="q21" onclick="showques('q2')"><pre>2</pre></div>
-        <div id="q31" onclick="showques('q3')"><pre>3</pre></div>
-        <div id="q41" onclick="showques('q4')"><pre>4</pre></div>
-        <div id="q51" onclick="showques('q5')"><pre>5</pre></div>
-      </div>
     </div>
-
     <script src="src/main.js" defer></script>
-  </body>
+</body>
 </html>
