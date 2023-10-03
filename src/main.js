@@ -224,7 +224,7 @@ function setStyleDisplay(style, ...elements) {
   function checkinitial(event,a, b) {
     event.preventDefault && event.preventDefault();
     if (document.getElementById("username").value == "")
-      alert("Please enter your name");
+      document.querySelector(".error").innerHTML = "Please enter your name"
     else {
 
       var s = document.getElementById("username").value;

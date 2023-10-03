@@ -185,6 +185,13 @@ button {
     margin-top: 20px;
 }
 
+.error{
+    color:red;
+    font-size: 1.3rem;
+    font-weight: bold;
+    margin-top:1rem;
+}
+
 @media only screen and (max-width:1200px) {
     * {
         font-size: 12px;
