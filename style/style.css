@@ -36,9 +36,15 @@
 #introduction{
     padding-right: 10px;
 }
+
+#introduction ul{
+    overflow-y: scroll;
+}
+
 #intro{
     padding-left: 16px;
 }
+
 #typename{
     margin-top:20px;
     margin-left: 19%;
@@ -133,6 +139,7 @@ button {
     width: 100px;
     float: right;
     margin-right: 26px;
+    /* border-radius: 10%; */
 }
 #button:hover{
     color:rgb(21, 20, 20);
@@ -184,10 +191,10 @@ button {
     }
 
     #body {
-        width: 100vw;
-        background: white;
-        margin-left: -27px;
-        margin-top: -50px;
+        width: 100vw !important;
+        background: linear-gradient(135deg, #71b7e6, #9b59b6);
+        /* margin-left: -27px;
+        margin-top: -50px; */
         overflow: hidden;
         height: 100vh;
     }
@@ -197,7 +204,11 @@ button {
     }
 
     #board {
-        background-color: transparent;
+        background: white;
+        width: min(100%-50px,65vmin);
+        height: 40vh;
+        border-radius: 9px;
+        padding: 15px;
     }
 
     #showproblems,
@@ -207,6 +218,7 @@ button {
         width: 0;
         height: 0;
         visibility: hidden;
+        display: none !important;
     }
 
     .title {
@@ -222,16 +234,18 @@ button {
     }
 
     #intro {
-        margin-top: -80px;
+        margin-top:0px;
     }
 
     #countdown {
         margin-left: 15px;
         margin-bottom: 50px;
+        margin-bottom:-2px !important;
     }
 
     #callByName {
         margin-right: -1px;
+        margin-bottom:-2px !important;
     }
 
     #q1,
@@ -251,6 +265,6 @@ button {
     #q3 button,
     #q4 button,
     #q5 button {
-        margin-left: 0px;
+        margin-left:5px;
     }
 }

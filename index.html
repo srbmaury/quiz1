@@ -1,11 +1,11 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Quiz</title>
-    <link rel="stylesheet" href="style/style.css">
+    <link rel="stylesheet" href="style/style.css" />
     <script src="https://cdn.jsdelivr.net/npm/fireworks-js@2.x/dist/index.umd.js"></script>
 </head>
 <body>
@@ -13,7 +13,7 @@
         <div id="board">
             <p id="countdown"></p>
 
-            <form id="typename" onsubmit="checkinitial(event,'typname','introduction')">
+        <form id="typename" onsubmit="checkinitial(event,'typename','introduction')">
                 <div>Enter your Name</div>
                 <input type="text" name="" id="username" maxlength="15">
                 <button type="submit" id="button" style="margin-top:52px; margin-left:40px;" >Next</button>
@@ -32,101 +32,7 @@
                 </ul>
                 <button type="submit" id="button" style="margin-top:15px;">Start test</button>
             </form>
-
-            <form id="q1" onsubmit="showQue('q1','q2',event)">
-                <span class="title">1</span>
-                <span>Which is the first letter of english alphabet?</span>
-                <div><input type="radio" name="opt1" id="opt11" onclick="addScore(0,1);">
-                <label for="opt11">
-                A</label></div>
-                <div><input type="radio" name="opt1" id="opt12" onclick="addScore(0,0);">
-                <label for="opt12">
-                B</label></div>
-                <div><input type="radio" name="opt1" id="opt13" onclick="addScore(0,0);">
-                <label for="opt13">
-                C</label></div>
-                <div><input type="radio" name="opt1" id="opt14" onclick="addScore(0,0);">
-                <label for="opt14">
-                D</label></div>
-                <button type="submit" id="button">Save and Next</button>
-            </form>
-            
-            <form id="q2" onsubmit="showQue('q2','q3',event)">
-                <span class="title">2</span>
-                <span>Which is the last letter of english alphabet?</span>
-                <div><input type="radio" name="opt2" id="opt21" onclick="addScore(1,0);">
-                <label for="opt21">
-                W</label></div>
-                <div><input type="radio" name="opt2" id="opt22" onclick="addScore(1,0);">
-                <label for="opt22">
-                X</label></div>
-                <div><input type="radio" name="opt2" id="opt23" onclick="addScore(1,0);">
-                <label for="opt23">
-                Y</label></div>
-                <div><input type="radio" name="opt2" id="opt24" onclick="addScore(1,1);">
-                <label for="opt24">
-                Z</label></div>
-                <button type="button" onclick="showPrev('q2','q1')">Prev</button>
-                <button type="submit" id="button">Save and Next</button>
-                </form>
-
-            <form id="q3" onsubmit="showQue('q3','q4',event)">
-                <span class="title">3</span>
-                <span>Which of these is a semi-vowel?</span>
-                <div><input type="radio" name="opt3" id="opt31" onclick="addScore(2,0)">
-                <label for="opt31">
-                A</label></div>
-                <div><input type="radio" name="opt3" id="opt32" onclick="addScore(2,1)">
-                <label for="opt32">
-                W</label></div>
-                <div><input type="radio" name="opt3" id="opt33" onclick="addScore(2,0)">
-                <label for="opt33">
-                P</label></div>
-                <div><input type="radio" name="opt3" id="opt34" onclick="addScore(2,0)">
-                <label for="opt34">
-                Z</label></div>
-                <button type="button" onclick="showPrev('q3','q2')">Prev</button>
-                <button id="button" type="submit">Save and Next</button>
-            </form>
-
-            <form id="q4" onsubmit="showQue('q4','q5',event)">
-                <span class="title">4</span>
-                <span>How many letters are there in english alphabet?</span>
-                <div><input type="radio" name="opt4" id="opt41" onclick="addScore(3,0)">
-                <label for="opt41">
-                5</label></div>
-                <div><input type="radio" name="opt4" id="opt42" onclick="addScore(3,0)">
-                <label for="opt42">
-                21</label></div>
-                <div><input type="radio" name="opt4" id="opt43" onclick="addScore(3,1)">
-                <label for="opt43">
-                26</label></div>
-                <div><input type="radio" name="opt4" id="opt44" onclick="addScore(3,0)">
-                <label for="opt44">
-                23</label></div>
-                <button type="button" onclick="showPrev('q4','q3')">Prev</button>
-                <button id="button" type="submit">Save and Next</button>
-            </form>
-
-            <form id="q5" onsubmit="showQue('q5','befres',event)">
-                <span class="title">5</span>
-                <span>What is 13<sup>th</sup> letter of alphabet?</span>
-                <div><input type="radio" name="5" id="opt51" onclick="addScore(4,0)">
-                <label for="opt51">
-                A</label></div>
-                <div><input type="radio" name="5" id="opt52" onclick="addScore(4,0)">
-                <label for="opt52">
-                W</label></div>
-                <div><input type="radio" name="5" id="opt53" onclick="addScore(4,0)">
-                <label for="opt53">
-                Y</label></div>
-                <div><input type="radio" name="5" id="opt54" onclick="addScore(4,1)">
-                <label for="opt54">
-                M</label></div>
-                <button type="button" onclick="showPrev('q5','q4')">Prev</button>
-                <button id="button" type="submit">Save Response</button>
-            </form>
-
+        <div id="questions"></div>
             <form id="befres" onsubmit="onSubmitBefres(event)">
                 <div>   Your responses have been recorded. </div>
                 <div><input type="checkbox" name="check" id="check"> <label for="check">Check this before submitting</label></div>
@@ -156,6 +62,6 @@
             <div id="q51" onclick="showques('q5')"> <pre>5</pre></div>
         </div>
     </div>
-    <script src="src/main.js"></script>
+    <script src="src/main.js" defer></script>
 </body>
 </html>
