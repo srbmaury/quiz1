@@ -160,6 +160,43 @@ function showPrev(a, b) {
  * @param {*} b
  */
 function showQue(a, b) {
+        const callByNameElement = document.getElementById("callByName");
+      
+        if (b === 'introduction') {
+          setStyleDisplay("none", callByNameElement);
+        } else {
+          setStyleDisplay("", callByNameElement);
+        }
+      
+        const questionIndexes = ["q1", "q2", "q3", "q4", "q5"];
+        const currentIndex = questionIndexes.indexOf(a);
+      
+        if (currentIndex !== -1 && attemp[currentIndex] === 1) {
+          document.getElementById(a + '1').style.border = "3.5px solid green";
+          attempt[currentIndex] = 1;
+          scoreAc[currentIndex] = score[currentIndex];
+        }
+      
+        if (b === "q1") {
+          document.getElementById("body").style.width = "75%";
+          setStyleDisplay("block", document.getElementById('showproblems'));
+        }
+      
+        if (a === 'befres' && b === 'res') {
+          if (document.getElementById('check').checked) {
+            setStyleDisplay("none", document.getElementById(a));
+            setStyleDisplay("block", document.getElementById(b));
+            time = Infinity;
+            setStyleDisplay("none", countdown);
+          } else {
+            alert('Kindly check the checkbox before clicking the submit button');
+          }
+        } else {
+          setStyleDisplay("none", document.getElementById(a));
+          setStyleDisplay("block", document.getElementById(b));
+        }
+      }
+      
   const callByNameElement = document.getElementById("callByName");
 
   if (b === "introduction") {
@@ -196,6 +233,7 @@ function showQue(a, b) {
     setStyleDisplay("block", document.getElementById(b));
   }
 }
+
 
 var res = 0;
 var attempted = 0;

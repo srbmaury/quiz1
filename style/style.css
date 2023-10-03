@@ -1,12 +1,19 @@
-@import url('https://fonts.googleapis.com/css2?family=Nunito:ital,wght@1,300&display=swap');
+/* @import url('https://fonts.googleapis.com/css2?family=Nunito:ital,wght@1,300&display=swap'); */
 
 * {
     padding: 0;
     margin: 0;
 }
+html{
+    scroll-behavior:smooth;
+    font-family: 'Poppins', sans-serif;
+
+}
 
 #body {
-    background: linear-gradient(135deg, #71b7e6, #9b59b6);
+    /* background: linear-gradient(135deg, #71b7e6, #9b59b6); */
+    background: rgb(34,193,195);
+    background: linear-gradient(0deg, rgba(34,193,195,1) 0%, rgba(253,187,45,1) 100%);
     min-height: 100vh;
     display: flex;
     justify-content: center;
@@ -21,16 +28,33 @@
     margin-top: -100vh;
     height: 100vh;
     width: 24.8%;
-    border-left: 2px solid black;
+    border: 1px solid black;
 }
-
 #board {
     background: white;
     width: 65vmin;
+
+    height: 35vmin;
+    text-align:center;
     height: 57vmin;
     border-radius: 9px;
     padding-top: 30px;
     padding-left: 30px;
+    padding: 30px;
+    -webkit-box-shadow: 0px 0px 13px 2px rgba(0, 0, 0, 0.3);
+    box-shadow: 0px 0px 13px 2px rgba(0, 0, 0, 0.3);
+    border: 1px solid black;
+}
+.name{
+    position: fixed;
+    left: 42.5%;
+}
+#username{
+    position: fixed;
+    left: 43%;
+    top: 40%;
+    -webkit-box-shadow: 0px 0px 13px 2px rgba(0, 0, 0, 0.3);
+    box-shadow: 0px 0px 13px 2px rgba(0, 0, 0, 0.3);    
 }
 
 #introduction{
@@ -38,6 +62,8 @@
 }
 #intro{
     padding-left: 16px;
+    font-size: larger;
+    font-weight: 900;
 }
 #typename{
     margin-top:20px;
@@ -121,8 +147,8 @@ button {
     margin-top: 16px;
     width: 48px;
     height: 28px;
-    border-radius: 5px;
-    background-color: blueviolet;
+    border-radius: 5px; 
+    background-color: #497da5;
     border: 0mm;
     color: white;
     float: left;
@@ -133,6 +159,11 @@ button {
     width: 100px;
     float: right;
     margin-right: 26px;
+    position: fixed;
+    top:50%;
+    -webkit-box-shadow: 0px 0px 13px 2px rgba(0, 0, 0, 0.3);
+    box-shadow: 0px 0px 13px 2px rgba(0, 0, 0, 0.3);
+    border: 1px solid black;
     /* border-radius: 10%; */
 }
 #button:hover{
@@ -146,9 +177,16 @@ button {
 
 }
 
-#res div {
-    margin-top: 8px;
+#res{
+    /* margin-top: 8px; */
     font-weight: 900;
+    font-size: x-large;
+    text-align: center;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+
 }
 
 #problems {
@@ -178,7 +216,68 @@ button {
     margin-left: 10px;
     margin-top: 20px;
 }
-
+#stauss{
+    border: 1px solid black;
+    border-radius: 5px;
+    text-align: center;
+    -webkit-box-shadow: 0px 0px 13px 2px rgba(0, 0, 0, 0.3);
+    box-shadow: 0px 0px 13px 2px rgba(0, 0, 0, 0.3);
+}
+#q11{
+    -webkit-box-shadow: 0px 0px 13px 2px rgba(0, 0, 0, 0.3);
+    box-shadow: 0px 0px 13px 2px rgba(0, 0, 0, 0.3);
+    border: 1px solid black;
+}
+#q11:hover{
+    cursor: pointer;
+    background-color: #79f49a;
+    color: white;
+}
+#q21{
+    -webkit-box-shadow: 0px 0px 13px 2px rgba(0, 0, 0, 0.3);
+    box-shadow: 0px 0px 13px 2px rgba(0, 0, 0, 0.3);
+    border: 1px solid black;
+}
+#q21:hover{
+    cursor: pointer;
+    background-color: #79f49a;
+    color: white;
+}#q31{
+    -webkit-box-shadow: 0px 0px 13px 2px rgba(0, 0, 0, 0.3);
+    box-shadow: 0px 0px 13px 2px rgba(0, 0, 0, 0.3);
+    border: 1px solid black;
+}
+#q31:hover{
+    cursor: pointer;
+    background-color: #79f49a;
+    color: white;
+}
+#q41{
+    -webkit-box-shadow: 0px 0px 13px 2px rgba(0, 0, 0, 0.3);
+    box-shadow: 0px 0px 13px 2px rgba(0, 0, 0, 0.3);
+    border: 1px solid black;
+}
+#q41:hover{
+    cursor: pointer;
+    background-color: #79f49a;
+    color: white;
+}
+#q51{
+    -webkit-box-shadow: 0px 0px 13px 2px rgba(0, 0, 0, 0.3);
+    box-shadow: 0px 0px 13px 2px rgba(0, 0, 0, 0.3);
+    border: 1px solid black;
+}
+#q51:hover{
+    cursor: pointer;
+    background-color: #79f49a;
+    color: white;
+}
+#showproblems{
+    background: rgb(63,94,251);
+    background: linear-gradient(90deg, rgba(63,94,251,1) 31%, rgba(252,70,107,1) 67%);
+    -webkit-box-shadow: 0px 0px 13px 2px rgba(0, 0, 0, 0.3);
+    box-shadow: 0px 0px 13px 2px rgba(0, 0, 0, 0.3);
+}
 @media only screen and (max-width:1200px) {
     * {
         font-size: 12px;
