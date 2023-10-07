@@ -25,14 +25,23 @@
 }
 
 #board {
-    background: white;
-    width: 65vmin;
-    height: 35vmin;
+    background: rgb(163, 156, 156);
+    border: 2px solid grey;
+    width: 700px;
+    height: 350px;
     border-radius: 9px;
     padding-top: 30px;
     padding-left: 30px;
 }
-
+#board:hover{
+    background-color: whitesmoke;
+}
+#name1{
+    margin-left: 100px;
+    font-size: 30px;
+    text-shadow: 2px grey;
+    font-weight: 800;
+}
 #introduction{
     padding-right: 10px;
 }
@@ -52,20 +61,29 @@
 }
 
 #typename input {
-    width: 300px;
-    height: 30px;
-    margin-top: 40px;
-    margin-left: -40px;
+    box-shadow: 1px 1px 1px 1px grey;
+    font-size: 20px;
+    background-color: rgb(219, 213, 213);
+    width: 585px;
+    height: 40px;
+    margin-top: 75px;
+    margin-left: -80px;
     border: 2px solid black;
     border-radius: 5px;
     padding-left: 4px;
 }
 
+#typename input:hover{
+    transform: scale(1.05);
+    transition: transform 0.5s ease-in-out;
+}
+
 #callByName {
+    display: none;
     float: right;
     margin-right: 0px;
-    margin-top: -50px;
-    background-color: white;
+    margin-top: -45px;
+    background-color: rgb(0, 0, 0);
     border: 8px solid white;
     border-radius: 5px;
     min-width: max-content;
@@ -77,8 +95,8 @@
 #countdown {
     float: left;
     margin-left: -30px;
-    margin-top: -50px;
-    background-color: white;
+    margin-top: -29px;
+    background-color: rgb(255, 255, 255);
     border: 8px solid white;
     border-radius: 5px;
     min-width: max-content;
@@ -122,35 +140,116 @@ input {
     margin-top: 20px;
     margin-left: 40px;
 }
+@import url('https://fonts.googleapis.com/css?family=Source+Code+Pro:200,900');
 
-button {
-    margin-top: 16px;
-    width: 48px;
-    height: 28px;
-    border-radius: 5px;
-    background-color: blueviolet;
-    border: 0mm;
-    color: white;
-    float: left;
-    cursor: pointer;
+:root {
+  --text-color: hsla(210, 50%, 85%, 1);
+  --shadow-color: hsla(210, 40%, 52%, .4);
+  --btn-color: hsl(210, 80%, 42%);
+  --bg-color: #141218;
 }
+button {
+   margin-left: 110px;
+   margin-top: 28px;
 
-#button {
-    width: 100px;
-    float: right;
-    margin-right: 26px;
-    /* border-radius: 10%; */
+  position:relative;
+  padding: 5px 10px;  
+  border: none;
+  background: none;
+  cursor: pointer;
+  
+  font-family: "Source Code Pro";
+  font-weight: 900;
+  text-transform: uppercase;
+  font-size: 30px;  
+  color: var(--text-color);
+  
+  background-color: var(--btn-color);
+  box-shadow: var(--shadow-color) 2px 2px 22px;
+  border-radius: 4px; 
+  z-index: 0;  
+  overflow: hidden;   
+   
 }
 #button:hover{
-    color:rgb(21, 20, 20);
-    background-color: rgb(187,148,223);
-
+    transform: scale(1.1);
+    transition: transform 0.5s ease-in-out;
 }
-#return:hover{
-    color:rgb(21, 20, 20);
-    background-color: rgb(187,148,223);
+button:focus {
+    outline-color: transparent;
+    box-shadow: var(--btn-color) 2px 2px 22px;
+  }
+  .right::after, button::after {
+    content: var(--content);
+    display: block;
+    position: absolute;
+    white-space: nowrap;
+    padding: 40px 40px;
+    pointer-events:none;
+  } 
+  button::after{
+    font-weight: 200;
+    top: -30px;
+    left: -20px;
+  } 
+   .right, .left {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+  }
+  .right {
+    left: 66%;
+  }
+  .left {
+    right: 66%;
+  }
+  .right::after {
+    top: -30px;
+    left: calc(-66% - 20px);
+    
+    background-color: var(--bg-color);
+    color:transparent;
+    transition: transform .4s ease-out;
+    transform: translate(0, -90%) rotate(0deg)
+  } 
+   button:hover .right::after {
+    transform: translate(0, -47%) rotate(0deg)
+  }
+  
+  button .right:hover::after {
+    transform: translate(0, -50%) rotate(-7deg)
+  }
+   
+  button .left:hover ~ .right::after {
+    transform: translate(0, -50%) rotate(7deg)
+  }
+button::before {
+    content: '';
+    pointer-events: none;
+    opacity: .6;
+    background:
+      radial-gradient(circle at 20% 35%,  transparent 0,  transparent 2px, var(--text-color) 3px, var(--text-color) 4px, transparent 4px),
+      radial-gradient(circle at 75% 44%, transparent 0,  transparent 2px, var(--text-color) 3px, var(--text-color) 4px, transparent 4px),
+      radial-gradient(circle at 46% 52%, transparent 0, transparent 4px, var(--text-color) 5px, var(--text-color) 6px, transparent 6px);
+  
+    width: 100%;
+    height: 300%;
+    top: 0;
+    left: 0;
+    position: absolute;
+    animation: bubbles 5s linear infinite both;
+  }
+  @keyframes bubbles {
+    from {
+      transform: translate();
+    }
+    to {
+      transform: translate(0, -66.666%);
+    }
+  }
 
-}
+
 
 #res div {
     margin-top: 8px;
