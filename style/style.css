@@ -25,9 +25,10 @@
 }
 
 #board {
+    border: 2px solid grey;
     background: white;
-    width: 65vmin;
-    height: 35vmin;
+    width: 750px;
+    height: 350px;
     border-radius: 9px;
     padding-top: 30px;
     padding-left: 30px;
@@ -40,25 +41,30 @@
 #introduction ul{
     overflow-y: scroll;
 }
-
+#name{
+    font-size: 35px;
+    text-shadow: 2px 2px 8px grey;
+}
 #intro{
     padding-left: 16px;
 }
 
 #typename{
     margin-top:20px;
-    margin-left: 19%;
+    margin-left: 30%;
     font-size: 30px;
 }
 
 #typename input {
-    width: 300px;
-    height: 30px;
-    margin-top: 40px;
+    font-size: 20px;
+    width: 330px;
+    height: 40px;
+    margin-top: 60px;
     margin-left: -40px;
     border: 2px solid black;
     border-radius: 5px;
     padding-left: 4px;
+    box-shadow: 1px 1px 1px 1px grey;
 }
 
 #callByName {
@@ -136,17 +142,26 @@ button {
 }
 
 #button {
+    margin-top: 23px;
+    
     width: 100px;
     float: right;
-    margin-right: 26px;
+    margin-right: 110px;
+    font-size: 15px;
     /* border-radius: 10%; */
 }
 #button:hover{
+    border: 2px solid grey;
     color:rgb(21, 20, 20);
     background-color: rgb(187,148,223);
+    transform: scale(1.2);
+    transition: transform 1s ease-in-out;
 
 }
 #return:hover{
+    border: 2px solid grey;
+    transform: scale(1.2);
+    transition: transform 1s ease-in-out;
     color:rgb(21, 20, 20);
     background-color: rgb(187,148,223);
 
@@ -259,6 +274,7 @@ button {
 
     #username {
         max-width: 200px;
+        
     }
 
     #typename div {
