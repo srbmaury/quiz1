@@ -33,96 +33,98 @@
                 <button id="button" style="margin-top:15px;" onclick="startTimer(); showQue('introduction','q1')">Start test</button>
             </div>
 
+            <!-- <div id="quiz-container"></div> -->
+
             <div id="q1">
                 <span class="title">1</span>
-                <span>Which is the first letter of english alphabet?</span>
-                <div><input type="radio" name="opt1" id="opt11" onclick="addScore(0,1);">
+                <span id="question-content1"></span>
+                <div><input type="radio" name="opt1" id="opt11">
                 <label for="opt11">
-                A</label></div>
-                <div><input type="radio" name="opt1" id="opt12" onclick="addScore(0,0);">
+                </label></div>
+                <div><input type="radio" name="opt1" id="opt12">
                 <label for="opt12">
-                B</label></div>
-                <div><input type="radio" name="opt1" id="opt13" onclick="addScore(0,0);">
+                </label></div>
+                <div><input type="radio" name="opt1" id="opt13">
                 <label for="opt13">
-                C</label></div>
-                <div><input type="radio" name="opt1" id="opt14" onclick="addScore(0,0);">
+                </label></div>
+                <div><input type="radio" name="opt1" id="opt14">
                 <label for="opt14">
-                D</label></div>
+                </label></div>
                 <button id="button" onclick="showQue('q1','q2')">Save and Next</button>
             </div>
             
             <div id="q2">
                 <span class="title">2</span>
-                <span>Which is the last letter of english alphabet?</span>
-                <div><input type="radio" name="opt2" id="opt21" onclick="addScore(1,0);">
+                <span id="question-content2"></span>
+                <div><input type="radio" name="opt2" id="opt21">
                 <label for="opt21">
-                W</label></div>
-                <div><input type="radio" name="opt2" id="opt22" onclick="addScore(1,0);">
+                </label></div>
+                <div><input type="radio" name="opt2" id="opt22">
                 <label for="opt22">
-                X</label></div>
-                <div><input type="radio" name="opt2" id="opt23" onclick="addScore(1,0);">
+                </label></div>
+                <div><input type="radio" name="opt2" id="opt23">
                 <label for="opt23">
-                Y</label></div>
-                <div><input type="radio" name="opt2" id="opt24" onclick="addScore(1,1);">
+                </label></div>
+                <div><input type="radio" name="opt2" id="opt24">
                 <label for="opt24">
-                Z</label></div>
+                </label></div>
                 <button onclick="showPrev('q2','q1')">Prev</button>
                 <button id="button" onclick="showQue('q2','q3')">Save and Next</button>
             </div>
 
             <div id="q3">
                 <span class="title">3</span>
-                <span>Which of these is a semi-vowel?</span>
-                <div><input type="radio" name="opt3" id="opt31" onclick="addScore(2,0)">
+                <span id="question-content3"></span>
+                <div><input type="radio" name="opt3" id="opt31">
                 <label for="opt31">
-                A</label></div>
-                <div><input type="radio" name="opt3" id="opt32" onclick="addScore(2,1)">
+                </label></div>
+                <div><input type="radio" name="opt3" id="opt32">
                 <label for="opt32">
-                W</label></div>
-                <div><input type="radio" name="opt3" id="opt33" onclick="addScore(2,0)">
+                </label></div>
+                <div><input type="radio" name="opt3" id="opt33">
                 <label for="opt33">
-                P</label></div>
-                <div><input type="radio" name="opt3" id="opt34" onclick="addScore(2,0)">
+                </label></div>
+                <div><input type="radio" name="opt3" id="opt34">
                 <label for="opt34">
-                Z</label></div>
+                </label></div>
                 <button onclick="showPrev('q3','q2')">Prev</button>
                 <button id="button" onclick="showQue('q3','q4')">Save and Next</button>
             </div>
 
             <div id="q4">
                 <span class="title">4</span>
-                <span>How many letters are there in english alphabet?</span>
-                <div><input type="radio" name="opt4" id="opt41" onclick="addScore(3,0)">
+                <span id="question-content4"></span>
+                <div><input type="radio" name="opt4" id="opt41">
                 <label for="opt41">
-                5</label></div>
-                <div><input type="radio" name="opt4" id="opt42" onclick="addScore(3,0)">
+                </label></div>
+                <div><input type="radio" name="opt4" id="opt42">
                 <label for="opt42">
-                21</label></div>
-                <div><input type="radio" name="opt4" id="opt43" onclick="addScore(3,1)">
+                </label></div>
+                <div><input type="radio" name="opt4" id="opt43">
                 <label for="opt43">
-                26</label></div>
-                <div><input type="radio" name="opt4" id="opt44" onclick="addScore(3,0)">
+                </label></div>
+                <div><input type="radio" name="opt4" id="opt44">
                 <label for="opt44">
-                23</label></div>
+                </label></div>
                 <button onclick="showPrev('q4','q3')">Prev</button>
                 <button id="button" onclick="showQue('q4','q5')">Save and Next</button>
             </div>
 
             <div id="q5">
                 <span class="title">5</span>
-                <span>What is 13<sup>th</sup> letter of alphabet?</span>
-                <div><input type="radio" name="5" id="opt51" onclick="addScore(4,0)">
+                <span id="question-content5"></span>
+                <div><input type="radio" name="5" id="opt51">
                 <label for="opt51">
-                A</label></div>
-                <div><input type="radio" name="5" id="opt52" onclick="addScore(4,0)">
+                </label></div>
+                <div><input type="radio" name="5" id="opt52">
                 <label for="opt52">
-                W</label></div>
-                <div><input type="radio" name="5" id="opt53" onclick="addScore(4,0)">
+                </label></div>
+                <div><input type="radio" name="5" id="opt53">
                 <label for="opt53">
-                Y</label></div>
-                <div><input type="radio" name="5" id="opt54" onclick="addScore(4,1)">
+                </label></div>
+                <div><input type="radio" name="5" id="opt54">
                 <label for="opt54">
-                M</label></div>
+                </label></div>
                 <button onclick="showPrev('q5','q4')">Prev</button>
                 <button id="button" onclick="showQue('q5','befres');">Save Response</button>
             </div>
