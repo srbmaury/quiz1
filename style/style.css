@@ -36,9 +36,15 @@
 #introduction{
     padding-right: 10px;
 }
+
+#introduction ul{
+    overflow-y: scroll;
+}
+
 #intro{
     padding-left: 16px;
 }
+
 #typename{
     margin-top:20px;
     margin-left: 19%;
@@ -133,6 +139,7 @@ button {
     width: 100px;
     float: right;
     margin-right: 26px;
+    /* border-radius: 10%; */
 }
 #button:hover{
     color:rgb(21, 20, 20);
@@ -177,6 +184,38 @@ button {
     margin-left: 10px;
     margin-top: 20px;
 }
+/* code for error msg */
+#errormsg{
+    position: absolute;
+    top:-40px;
+    left:0;
+    right:0;
+    margin:0 auto;
+    width:max-content;
+    font-size: 12px !important;
+    padding:10px 15px;
+    border:2px solid red;
+    border-radius: 8px;
+    background:white;
+    box-shadow: 3px 3px 0px 0px rgba(255, 0, 0, 0.3);
+    display: flex;
+    align-items: center;
+    gap:1rem;
+    transform: scale(0);
+    transition:.3s ease-in-out;
+}
+
+#errormsg span{
+    color:red;
+    font-size: 12px !important;
+}
+
+#errormsg.show{
+    top:40px;
+    transform: scale(1)
+}
+
+/* code end */
 
 @media only screen and (max-width:1200px) {
     * {
@@ -184,10 +223,10 @@ button {
     }
 
     #body {
-        width: 100vw;
-        background: white;
-        margin-left: -27px;
-        margin-top: -50px;
+        width: 100vw !important;
+        background: linear-gradient(135deg, #71b7e6, #9b59b6);
+        /* margin-left: -27px;
+        margin-top: -50px; */
         overflow: hidden;
         height: 100vh;
     }
@@ -197,7 +236,11 @@ button {
     }
 
     #board {
-        background-color: transparent;
+        background: white;
+        width: min(100%-50px,65vmin);
+        height: 40vh;
+        border-radius: 9px;
+        padding: 15px;
     }
 
     #showproblems,
@@ -207,6 +250,7 @@ button {
         width: 0;
         height: 0;
         visibility: hidden;
+        display: none !important;
     }
 
     .title {
@@ -222,16 +266,18 @@ button {
     }
 
     #intro {
-        margin-top: -80px;
+        margin-top:0px;
     }
 
     #countdown {
         margin-left: 15px;
         margin-bottom: 50px;
+        margin-bottom:-2px !important;
     }
 
     #callByName {
         margin-right: -1px;
+        margin-bottom:-2px !important;
     }
 
     #q1,
@@ -251,6 +297,6 @@ button {
     #q3 button,
     #q4 button,
     #q5 button {
-        margin-left: 0px;
+        margin-left:5px;
     }
 }

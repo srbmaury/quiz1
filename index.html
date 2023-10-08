@@ -1,27 +1,64 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Quiz</title>
-    <link rel="stylesheet" href="style/style.css">
+    <link rel="stylesheet" href="style/style.css" />
+    <link rel="stylesheet" href="style/particles.css">
+    <!-- // google icons link -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />
     <script src="https://cdn.jsdelivr.net/npm/fireworks-js@2.x/dist/index.umd.js"></script>
 </head>
 <body>
+    <ul class="circles">
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+    </ul>
+    </div>
     <div id="body">
         <div id="board">
             <p id="countdown"></p>
 
-            <div id="typename">
+        <form id="typename" onsubmit="checkinitial(event,'typename','introduction')">
                 <div>Enter your Name</div>
-                <input type="text" name="" id="username" maxlength="15">
-                <button id="button" style="margin-top:52px; margin-left:40px;" onclick="checkinitial('typename','introduction')">Next</button>
-            </div>
+                <input type="text" name="" id="username" maxlength="15" placeholder="Enter Your name here">
+                <div class="" id="errormsg"></div>
+                <button type="submit" id="button" style="margin-top:52px; margin-left:40px;" >Next</button>
+            </form>
 
             <div id="callByName"> </div>
 
-            <div id="introduction">
+            <form id="introduction" onsubmit="onSubmitIntroduction(event)">
                 <p id="intro">General Instructions:</p>
                 <ul type="disc">
                     <li>There are 4 marks for each correct answer.</li>
@@ -30,111 +67,15 @@
                     <li>Paper will submit automatically if time runs out.</li>
                     <li>The response for a question won't be recorded until unless you click save and next/next button.</li>
                 </ul>
-                <button id="button" style="margin-top:15px;" onclick="startTimer(); showQue('introduction','q1')">Start test</button>
-            </div>
-
-            <!-- <div id="quiz-container"></div> -->
-
-            <div id="q1">
-                <span class="title">1</span>
-                <span id="question-content1"></span>
-                <div><input type="radio" name="opt1" id="opt11">
-                <label for="opt11">
-                </label></div>
-                <div><input type="radio" name="opt1" id="opt12">
-                <label for="opt12">
-                </label></div>
-                <div><input type="radio" name="opt1" id="opt13">
-                <label for="opt13">
-                </label></div>
-                <div><input type="radio" name="opt1" id="opt14">
-                <label for="opt14">
-                </label></div>
-                <button id="button" onclick="showQue('q1','q2')">Save and Next</button>
-            </div>
-            
-            <div id="q2">
-                <span class="title">2</span>
-                <span id="question-content2"></span>
-                <div><input type="radio" name="opt2" id="opt21">
-                <label for="opt21">
-                </label></div>
-                <div><input type="radio" name="opt2" id="opt22">
-                <label for="opt22">
-                </label></div>
-                <div><input type="radio" name="opt2" id="opt23">
-                <label for="opt23">
-                </label></div>
-                <div><input type="radio" name="opt2" id="opt24">
-                <label for="opt24">
-                </label></div>
-                <button onclick="showPrev('q2','q1')">Prev</button>
-                <button id="button" onclick="showQue('q2','q3')">Save and Next</button>
-            </div>
-
-            <div id="q3">
-                <span class="title">3</span>
-                <span id="question-content3"></span>
-                <div><input type="radio" name="opt3" id="opt31">
-                <label for="opt31">
-                </label></div>
-                <div><input type="radio" name="opt3" id="opt32">
-                <label for="opt32">
-                </label></div>
-                <div><input type="radio" name="opt3" id="opt33">
-                <label for="opt33">
-                </label></div>
-                <div><input type="radio" name="opt3" id="opt34">
-                <label for="opt34">
-                </label></div>
-                <button onclick="showPrev('q3','q2')">Prev</button>
-                <button id="button" onclick="showQue('q3','q4')">Save and Next</button>
-            </div>
-
-            <div id="q4">
-                <span class="title">4</span>
-                <span id="question-content4"></span>
-                <div><input type="radio" name="opt4" id="opt41">
-                <label for="opt41">
-                </label></div>
-                <div><input type="radio" name="opt4" id="opt42">
-                <label for="opt42">
-                </label></div>
-                <div><input type="radio" name="opt4" id="opt43">
-                <label for="opt43">
-                </label></div>
-                <div><input type="radio" name="opt4" id="opt44">
-                <label for="opt44">
-                </label></div>
-                <button onclick="showPrev('q4','q3')">Prev</button>
-                <button id="button" onclick="showQue('q4','q5')">Save and Next</button>
-            </div>
-
-            <div id="q5">
-                <span class="title">5</span>
-                <span id="question-content5"></span>
-                <div><input type="radio" name="5" id="opt51">
-                <label for="opt51">
-                </label></div>
-                <div><input type="radio" name="5" id="opt52">
-                <label for="opt52">
-                </label></div>
-                <div><input type="radio" name="5" id="opt53">
-                <label for="opt53">
-                </label></div>
-                <div><input type="radio" name="5" id="opt54">
-                <label for="opt54">
-                </label></div>
-                <button onclick="showPrev('q5','q4')">Prev</button>
-                <button id="button" onclick="showQue('q5','befres');">Save Response</button>
-            </div>
-
-            <div id="befres">
+                <button type="submit" id="button" style="margin-top:15px;">Start test</button>
+            </form>
+        <div id="questions"></div>
+            <form id="befres" onsubmit="onSubmitBefres(event)">
                 <div>   Your responses have been recorded. </div>
                 <div><input type="checkbox" name="check" id="check"> <label for="check">Check this before submitting</label></div>
-                <button id="return" style="margin-top:90px; width:100px;" onclick="showPrev('befres','q5')">Return</button>
-                <button id="button" style="margin-top:90px;" onclick="showQue('befres','res'); showScore()">Submit</button>
-            </div>
+                <button id="return" type="button" style="margin-top:90px; width:100px;" onclick="showPrev('befres','q5')">Return</button>
+                <button id="button" type="submit" style="margin-top:90px;" >Submit</button>
+            </form>
             
             <div id="res">
                 <pre><div>Total Number of questions : <span id="totalQ"></span></div></pre>
@@ -158,6 +99,6 @@
             <div id="q51" onclick="showques('q5')"> <pre>5</pre></div>
         </div>
     </div>
-    <script src="src/main.js"></script>
+    <script src="src/main.js" defer></script>
 </body>
 </html>
