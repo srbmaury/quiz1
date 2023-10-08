@@ -63,15 +63,12 @@ function setStyleDisplay(style, ...elements) {
       item.id
     }','${item.id == quizQuestions.length ? "befres" : "q" + (item.id + 1)}',event)">
             <span class="title">${item.id}</span>
-            <span>${item.title}</span>
+            <span id = "question-content${item.id}">${item.title}</span>
             <div>
               <input
                 type="radio"
                 name="opt${item.id}"
                 id="opt${item.id}1"
-                onclick="addScore(${item.id - 1},${
-      item.correct === 1 ? 1 : 0
-    });"
               />
               <label for="opt${item.id}1"> ${item.op1}</label>
             </div>
@@ -80,9 +77,6 @@ function setStyleDisplay(style, ...elements) {
                 type="radio"
                 name="opt${item.id}"
                 id="opt${item.id}2"
-                onclick="addScore(${item.id - 1},${
-      item.correct === 2 ? 1 : 0
-    });"
               />
               <label for="opt${item.id}2">  ${item.op2}</label>
             </div>
@@ -91,9 +85,6 @@ function setStyleDisplay(style, ...elements) {
                 type="radio"
                 name="opt${item.id}"
                 id="opt${item.id}3"
-                onclick="addScore(${item.id - 1},${
-      item.correct === 3 ? 1 : 0
-    });"
               />
               <label for="opt${item.id}3">  ${item.op3}</label>
             </div>
@@ -102,9 +93,6 @@ function setStyleDisplay(style, ...elements) {
                 type="radio"
                 name="opt${item.id}"
                 id="opt${item.id}4"
-                onclick="addScore(${item.id - 1},${
-      item.correct === 4 ? 1 : 0
-    });"
               />
          
              
@@ -140,6 +128,9 @@ function setStyleDisplay(style, ...elements) {
   var attemp = [0, 0, 0, 0, 0];
   var score = [0, 0, 0, 0, 0];
   var scoreAc = [0, 0, 0, 0, 0];
+  var questionArr = [];
+  var correctAnsArr = [];
+  var incorrectAnsArr = [];
   
   /**
    *
@@ -221,7 +212,7 @@ function setStyleDisplay(style, ...elements) {
    * @param {*} a
    * @param {*} b
    */
-  function checkinitial(event,a, b) {
+  async function checkinitial(event,a, b) {
     event.preventDefault && event.preventDefault();
     const errorElement = document.getElementById("errormsg");
     if (document.getElementById("username").value == ""){
@@ -237,6 +228,7 @@ function setStyleDisplay(style, ...elements) {
       var s = document.getElementById("username").value;
       document.getElementById("callByName").innerHTML = s;
       // document.getElementById("callByName").style.display = "block";    /*--------------------*/
+	  await getQuesFromApi();
       showQue(a, b);
     }
   }
@@ -345,4 +337,50 @@ function onSubmitBefres(event){
   event.preventDefault();
   showQue("befres", "res");
   showScore();
+}
+
+async function getQuesFromApi(){
+	const result = await fetch("https://opentdb.com/api.php?amount=5&category=21&difficulty=easy&type=multiple");
+	const data = await result.json();
+	
+	
+	data.results.forEach((loadedQuestion) => {
+		console.log(loadedQuestion);
+		questionArr.push(loadedQuestion.question);
+		correctAnsArr.push(loadedQuestion.correct_answer);
+		incorrectAnsArr.push(loadedQuestion.incorrect_answers);
+	});
+
+	generateQuestions(questionArr,correctAnsArr,incorrectAnsArr);
+}
+
+
+function generateQuestions(questionArr,correctAnsArr,incorrectAnsArr){
+
+	for(let i = 0;i < questionArr.length;i++){
+		const questionSpan = document.getElementById(`question-content${i+1}`);
+		var temporaryTag = document.createElement("p");
+		temporaryTag.innerHTML = questionArr[i];
+		questionSpan.textContent = temporaryTag.innerHTML;
+		const randomCorrectOptionNum = Math.floor(Math.random() * 4);
+		let incorrectAnsIdx = 0;
+		
+		for(let j = 0;j<4;j++){
+			const inputElement = document.getElementById(`opt${i+1}${j+1}`);
+			const labelElement = document.querySelector(`label[for="${inputElement.id}"]`);
+	
+			const ifCorrectOption = (j === randomCorrectOptionNum) ? 1 : 0;
+			inputElement.onclick = function() {
+				addScore(i, ifCorrectOption);
+			};
+
+			if(j === randomCorrectOptionNum){
+				labelElement.textContent = correctAnsArr[i];
+			}
+			else{
+				labelElement.textContent = incorrectAnsArr[i][incorrectAnsIdx++];
+			}
+		}
+	}
+
 }
