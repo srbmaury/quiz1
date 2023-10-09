@@ -1,318 +1,322 @@
-@import url('https://fonts.googleapis.com/css2?family=Nunito:ital,wght@1,300&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Nunito:ital,wght@1,300&display=swap");
 
 * {
-    padding: 0;
-    margin: 0;
+  padding: 0;
+  margin: 0;
 }
 
 #body {
-    background: linear-gradient(135deg, #71b7e6, #9b59b6);
-    min-height: 100vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 100%;
+  background: linear-gradient(135deg, #71b7e6, #9b59b6);
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
 }
 
 #showproblems {
-    background: linear-gradient(135deg, rgb(34, 230, 60), rgb(190, 190, 91));
-    /* background: rgb(97, 226, 83); */
-    margin-left: 75%;
-    margin-top: -100vh;
-    height: 100vh;
-    width: 24.8%;
-    border-left: 2px solid black;
+  background: linear-gradient(135deg, rgb(34, 230, 60), rgb(190, 190, 91));
+  /* background: rgb(97, 226, 83); */
+  margin-left: 75%;
+  margin-top: -100vh;
+  height: 100vh;
+  width: 24.8%;
+  border-left: 2px solid black;
 }
 
 #board {
-    border: 2px solid grey;
-    background: white;
-    width: 750px;
-    height: 350px;
-    border-radius: 9px;
-    padding-top: 30px;
-    padding-left: 30px;
+  border: 2px solid grey;
+  background: white;
+  width: 750px;
+  height: 350px;
+  border-radius: 9px;
+  padding-top: 30px;
+  padding-left: 30px;
 }
 
-#introduction{
-    padding-right: 10px;
+#introduction {
+  padding-right: 10px;
 }
 
-#introduction ul{
-    overflow-y: scroll;
+#introduction ul {
+  overflow-y: scroll;
 }
-#name{
-    font-size: 35px;
-    text-shadow: 2px 2px 8px grey;
+#name {
+  font-size: 35px;
+  text-shadow: 2px 2px 8px grey;
 }
-#intro{
-    padding-left: 16px;
+#intro {
+  padding-left: 16px;
 }
 
-#typename{
-    margin-top:20px;
-    margin-left: 30%;
-    font-size: 30px;
+#typename {
+  margin-top: 20px;
+  margin-left: 30%;
+  font-size: 30px;
 }
 
 #typename input {
-    font-size: 20px;
-    width: 330px;
-    height: 40px;
-    margin-top: 60px;
-    margin-left: -40px;
-    border: 2px solid black;
-    border-radius: 5px;
-    padding-left: 4px;
-    box-shadow: 1px 1px 1px 1px grey;
+  font-size: 20px;
+  width: 330px;
+  height: 40px;
+  margin-top: 60px;
+  margin-left: -40px;
+  border: 2px solid black;
+  border-radius: 5px;
+  padding-left: 4px;
+  box-shadow: 1px 1px 1px 1px grey;
 }
 
 #callByName {
-    float: right;
-    margin-right: 0px;
-    margin-top: -50px;
-    background-color: white;
-    border: 8px solid white;
-    border-radius: 5px;
-    min-width: max-content;
-    min-height: 16px;
-    color: black;
-    text-transform: uppercase;
+  float: right;
+  margin-right: 0px;
+  margin-top: -50px;
+  background-color: white;
+  border: 8px solid white;
+  border-radius: 5px;
+  min-width: max-content;
+  min-height: 16px;
+  color: black;
+  text-transform: uppercase;
 }
 
 #countdown {
-    float: left;
-    margin-left: -30px;
-    margin-top: -50px;
-    background-color: white;
-    border: 8px solid white;
-    border-radius: 5px;
-    min-width: max-content;
-    min-height: 16px;
-    color: black;
-    text-transform: uppercase;
+  float: left;
+  margin-left: -30px;
+  margin-top: -50px;
+  background-color: white;
+  border: 8px solid white;
+  border-radius: 5px;
+  min-width: max-content;
+  min-height: 16px;
+  color: black;
+  text-transform: uppercase;
 }
 
 #intro {
-    text-transform: uppercase;
-    color: red;
-    font-weight: 950;
-    font-size: 16px;
-    margin-top: -12px;
-    margin-bottom: 20px;
+  text-transform: uppercase;
+  color: red;
+  font-weight: 950;
+  font-size: 16px;
+  margin-top: -12px;
+  margin-bottom: 20px;
 }
 
 ul {
-    color: black;
-    margin-top: -10px;
-    margin-left: 30px;
+  color: black;
+  margin-top: -10px;
+  margin-left: 30px;
 }
 
 ul li {
-    margin-top: 10px;
+  margin-top: 10px;
 }
 
 .title {
-    padding: 10px;
-    padding-left: 14px;
-    padding-right: 14px;
-    background-color: rgb(38, 230, 63);
-    border-radius: 50px;
+  padding: 10px;
+  padding-left: 14px;
+  padding-right: 14px;
+  background-color: rgb(38, 230, 63);
+  border-radius: 50px;
 }
 
 #board span {
-    font-weight: 900;
+  font-weight: 900;
 }
 
 input {
-    margin-top: 20px;
-    margin-left: 40px;
+  margin-top: 20px;
+  margin-left: 40px;
 }
 
 button {
-    margin-top: 16px;
-    width: 48px;
-    height: 28px;
-    border-radius: 5px;
-    background-color: blueviolet;
-    border: 0mm;
-    color: white;
-    float: left;
-    cursor: pointer;
+  margin-top: 16px;
+  width: 48px;
+  height: 28px;
+  border-radius: 5px;
+  background-color: blueviolet;
+  border: 0mm;
+  color: white;
+  float: left;
+  cursor: pointer;
 }
 
 #button {
-    margin-top: 23px;
-    
-    width: 100px;
-    float: right;
-    margin-right: 110px;
-    font-size: 15px;
-    /* border-radius: 10%; */
-}
-#button:hover{
-    border: 2px solid grey;
-    color:rgb(21, 20, 20);
-    background-color: rgb(187,148,223);
-    transform: scale(1.2);
-    transition: transform 1s ease-in-out;
+  margin-top: 23px;
 
+  width: 100px;
+  float: right;
+  margin-right: 110px;
+  font-size: 15px;
+  /* border-radius: 10%; */
 }
-#return:hover{
-    border: 2px solid grey;
-    transform: scale(1.2);
-    transition: transform 1s ease-in-out;
-    color:rgb(21, 20, 20);
-    background-color: rgb(187,148,223);
-
+.button:hover {
+  border: 2px solid grey;
+  color: rgb(21, 20, 20);
+  background-color: rgb(187, 148, 223);
+  transform: scale(1.2);
+  transition: transform 1s ease-in-out;
+}
+#button:hover {
+  border: 2px solid grey;
+  color: rgb(21, 20, 20);
+  background-color: rgb(187, 148, 223);
+  transform: scale(1.2);
+  transition: transform 1s ease-in-out;
+}
+#return:hover {
+  border: 2px solid grey;
+  transform: scale(1.2);
+  transition: transform 1s ease-in-out;
+  color: rgb(21, 20, 20);
+  background-color: rgb(187, 148, 223);
 }
 
 #res div {
-    margin-top: 8px;
-    font-weight: 900;
+  margin-top: 8px;
+  font-weight: 900;
 }
 
 #problems {
-    margin-left: 110px;
-    padding-top: 60px;
-    color: black;
-    font-weight: 700px;
-    width: 60px;
-    padding-left: 30px;
+  margin-left: 110px;
+  padding-top: 60px;
+  color: black;
+  font-weight: 700px;
+  width: 60px;
+  padding-left: 30px;
 }
 
 #problems div {
-    background-color: white;
-    margin-bottom: 25px;
-    padding: 22px 22px;
-    font-size: 15px;
-    cursor: pointer;
-    border-radius: 50px;
-    font-weight: 900;
+  background-color: white;
+  margin-bottom: 25px;
+  padding: 22px 22px;
+  font-size: 15px;
+  cursor: pointer;
+  border-radius: 50px;
+  font-weight: 900;
 }
 
 #problems div pre {
-    margin-left: 4px;
+  margin-left: 4px;
 }
 
 #befres {
-    margin-left: 10px;
-    margin-top: 20px;
+  margin-left: 10px;
+  margin-top: 20px;
 }
 /* code for error msg */
-#errormsg{
-    position: absolute;
-    top:-40px;
-    left:0;
-    right:0;
-    margin:0 auto;
-    width:max-content;
-    font-size: 12px !important;
-    padding:10px 15px;
-    border:2px solid red;
-    border-radius: 8px;
-    background:white;
-    box-shadow: 3px 3px 0px 0px rgba(255, 0, 0, 0.3);
-    display: flex;
-    align-items: center;
-    gap:1rem;
-    transform: scale(0);
-    transition:.3s ease-in-out;
+#errormsg {
+  position: absolute;
+  top: -40px;
+  left: 0;
+  right: 0;
+  margin: 0 auto;
+  width: max-content;
+  font-size: 12px !important;
+  padding: 10px 15px;
+  border: 2px solid red;
+  border-radius: 8px;
+  background: white;
+  box-shadow: 3px 3px 0px 0px rgba(255, 0, 0, 0.3);
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  transform: scale(0);
+  transition: 0.3s ease-in-out;
 }
 
-#errormsg span{
-    color:red;
-    font-size: 12px !important;
+#errormsg span {
+  color: red;
+  font-size: 12px !important;
 }
 
-#errormsg.show{
-    top:40px;
-    transform: scale(1)
+#errormsg.show {
+  top: 40px;
+  transform: scale(1);
 }
 
 /* code end */
 
-@media only screen and (max-width:1200px) {
-    * {
-        font-size: 12px;
-    }
+@media only screen and (max-width: 1200px) {
+  * {
+    font-size: 12px;
+  }
 
-    #body {
-        width: 100vw !important;
-        background: linear-gradient(135deg, #71b7e6, #9b59b6);
-        /* margin-left: -27px;
+  #body {
+    width: 100vw !important;
+    background: linear-gradient(135deg, #71b7e6, #9b59b6);
+    /* margin-left: -27px;
         margin-top: -50px; */
-        overflow: hidden;
-        height: 100vh;
-    }
+    overflow: hidden;
+    height: 100vh;
+  }
 
-    #showproblems {
-        max-width: 0;
-    }
+  #showproblems {
+    max-width: 0;
+  }
 
-    #board {
-        background: white;
-        width: min(100%-50px,65vmin);
-        height: 40vh;
-        border-radius: 9px;
-        padding: 15px;
-    }
+  #board {
+    background: white;
+    width: min(100%-50px, 65vmin);
+    height: 40vh;
+    border-radius: 9px;
+    padding: 15px;
+  }
 
-    #showproblems,
-    #problems,
-    #statuss {
-        all: none;
-        width: 0;
-        height: 0;
-        visibility: hidden;
-        display: none !important;
-    }
+  #showproblems,
+  #problems,
+  #statuss {
+    all: none;
+    width: 0;
+    height: 0;
+    visibility: hidden;
+    display: none !important;
+  }
 
-    .title {
-        background-color: transparent;
-    }
+  .title {
+    background-color: transparent;
+  }
 
-    #username {
-        max-width: 200px;
-        
-    }
+  #username {
+    max-width: 200px;
+  }
 
-    #typename div {
-        font-size: 20px;
-    }
+  #typename div {
+    font-size: 20px;
+  }
 
-    #intro {
-        margin-top:0px;
-    }
+  #intro {
+    margin-top: 0px;
+  }
 
-    #countdown {
-        margin-left: 15px;
-        margin-bottom: 50px;
-        margin-bottom:-2px !important;
-    }
+  #countdown {
+    margin-left: 15px;
+    margin-bottom: 50px;
+    margin-bottom: -2px !important;
+  }
 
-    #callByName {
-        margin-right: -1px;
-        margin-bottom:-2px !important;
-    }
+  #callByName {
+    margin-right: -1px;
+    margin-bottom: -2px !important;
+  }
 
-    #q1,
-    #q2,
-    #q3,
-    #q4,
-    #q5 {
-        overflow: hidden;
-    }
+  #q1,
+  #q2,
+  #q3,
+  #q4,
+  #q5 {
+    overflow: hidden;
+  }
 
-    #befres button {
-        max-width: 52px;
-    }
+  #befres button {
+    max-width: 52px;
+  }
 
-    #q1 button,
-    #q2 button,
-    #q3 button,
-    #q4 button,
-    #q5 button {
-        margin-left:5px;
-    }
+  #q1 button,
+  #q2 button,
+  #q3 button,
+  #q4 button,
+  #q5 button {
+    margin-left: 5px;
+  }
 }
