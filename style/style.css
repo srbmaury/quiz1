@@ -70,27 +70,29 @@
 #callByName {
   float: right;
   margin-right: 0px;
-  margin-top: -50px;
-  background-color: white;
-  border: 8px solid white;
+  margin-top:-100px;
+  background-color:  white;
+  border: 2px solid white;
   border-radius: 5px;
   min-width: max-content;
   min-height: 16px;
   color: black;
   text-transform: uppercase;
+  padding: 10px 20px;
 }
 
 #countdown {
   float: left;
   margin-left: -30px;
-  margin-top: -50px;
-  background-color: white;
-  border: 8px solid white;
+  margin-top: -100px;
+  background-color: rgb(204, 152, 209);
+  border: 2px solid rgb(24, 23, 24);
   border-radius: 5px;
   min-width: max-content;
   min-height: 16px;
   color: black;
   text-transform: uppercase;
+  padding: 10px 20px;
 }
 
 #intro {
@@ -131,25 +133,27 @@ input {
 
 button {
   margin-top: 16px;
-  width: 48px;
-  height: 28px;
+  /* height: 40px; */
   border-radius: 5px;
   background-color: blueviolet;
   border: 0mm;
   color: white;
   float: left;
   cursor: pointer;
+  /* padding: 10px 20px; */
+
 }
 
 #button {
   margin-top: 23px;
-
-  width: 100px;
   float: right;
   margin-right: 110px;
-  font-size: 15px;
-  /* border-radius: 10%; */
+  font-size: 20.7px;
+    /* border-radius: 10%; */
+   padding: 10px 15px 10px 15px;
+    
 }
+
 .button:hover {
   border: 2px solid grey;
   color: rgb(21, 20, 20);
