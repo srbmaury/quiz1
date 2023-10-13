@@ -224,7 +224,7 @@ async function checkinitial(event, a, b) {
     document.getElementById("callByName").innerHTML = s
     // document.getElementById("callByName").style.display = "block";    /*--------------------*/
     await getQuesFromApi()
-    showQue(a, b)
+     showQue(a, b)
   }
 }
 
