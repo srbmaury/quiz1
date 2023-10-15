@@ -140,34 +140,27 @@ button {
   color: white;
   float: left;
   cursor: pointer;
-  /* padding: 10px 20px; */
+  padding: 10px 20px;
+  font-size: 20.7px;
 
 }
 
 #button {
-  margin-top: 23px;
   float: right;
   margin-right: 110px;
-  font-size: 20.7px;
     /* border-radius: 10%; */
-   padding: 10px 15px 10px 15px;
+   /* padding: 10px 15px 10px 15px; */
     
 }
 
-.button:hover {
+.button:hover , #button:hover {
   border: 2px solid grey;
   color: rgb(21, 20, 20);
   background-color: rgb(187, 148, 223);
   transform: scale(1.2);
   transition: transform 1s ease-in-out;
 }
-#button:hover {
-  border: 2px solid grey;
-  color: rgb(21, 20, 20);
-  background-color: rgb(187, 148, 223);
-  transform: scale(1.2);
-  transition: transform 1s ease-in-out;
-}
+
 #return:hover {
   border: 2px solid grey;
   transform: scale(1.2);
@@ -239,6 +232,16 @@ button {
   transform: scale(1);
 }
 
+/* prev button code  */
+
+#q1 button,
+#q2 button,
+#q3 button,
+#q4 button,
+#q5 button {
+  margin-left: 30px;
+}
+
 /* code end */
 
 @media only screen and (max-width: 1200px) {
@@ -304,23 +307,4 @@ button {
     margin-bottom: -2px !important;
   }
 
-  #q1,
-  #q2,
-  #q3,
-  #q4,
-  #q5 {
-    overflow: hidden;
-  }
-
-  #befres button {
-    max-width: 52px;
-  }
-
-  #q1 button,
-  #q2 button,
-  #q3 button,
-  #q4 button,
-  #q5 button {
-    margin-left: 5px;
-  }
 }
