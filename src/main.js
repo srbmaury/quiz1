@@ -9,66 +9,42 @@ function setStyleDisplay(style, ...elements) {
   })
 }
 
-var quizQuestions = [
-  {
-    id: 1,
-    title: "Which is the first letter of english alphabet?",
-    op1: "A",
-    op2: "B",
-    op3: "C",
-    op4: "D",
-    correct: 1,
-  },
-  {
-    id: 2,
-    title: "Which is the last letter of english alphabet?",
-    op1: "W",
-    op2: "X",
-    op3: "Y",
-    op4: "Z",
-    correct: 4,
-  },
-  {
-    id: 3,
-    title: "Which of these is a semi-vowel?",
-    op1: "A",
-    op2: "W",
-    op3: "P",
-    op4: "Z",
-    correct: 2,
-  },
-  {
-    id: 4,
-    title: "How many letters are there in english alphabet?",
-    op1: 5,
-    op2: 21,
-    op3: 26,
-    op4: 23,
-    correct: 3,
-  },
-  {
-    id: 5,
-    title: "What is 13<sup>th</sup> letter of alphabet?",
-    op1: "A",
-    op2: "W",
-    op3: "Y",
-    op4: "M",
-    correct: 4,
-  },
-]
-var questionsHtml = document.getElementById("questions")
 
-quizQuestions.forEach((item) => {
-  questionsHtml.innerHTML += `<form id="q${item.id}" onsubmit="showQue('q${item.id}','${
-    item.id == quizQuestions.length ? "befres" : "q" + (item.id + 1)
-  }',event)">
+var res = document.getElementById("res")
+var introduction = document.getElementById("introduction")
+var showproblems = document.getElementById("showproblems")
+var befres = document.getElementById("befres")
+var countdown = document.getElementById("countdown")
+var questionsHtml = document.getElementById("questions")
+var quizCategory = document.getElementById("quiz-category")
+var quizDifficulty = document.getElementById("quiz-difficulty")
+
+setStyleDisplay("none", res, introduction, showproblems, befres, countdown)
+
+var attempt = [0, 0, 0, 0, 0]
+var attemp = [0, 0, 0, 0, 0]
+var score = [0, 0, 0, 0, 0]
+var scoreAc = [0, 0, 0, 0, 0]
+var quizQuestions = []
+var questionArr = []
+var correctAnsArr = []
+var incorrectAnsArr = []
+
+function generateQuestionUI(){
+  quizQuestions.forEach((item) => {
+    questionsHtml.innerHTML += `<form id="q${item.id}" onsubmit="showQue('q${
+      item.id
+    }','${item.id == quizQuestions.length ? "befres" : "q" + (item.id + 1)}',event)">
             <span class="title">${item.id}</span>
-            <span id = "question-content${item.id}">${item.title}</span>
+            <span>${item.title}</span>
             <div>
               <input
                 type="radio"
                 name="opt${item.id}"
                 id="opt${item.id}1"
+                onclick="addScore(${item.id - 1},${
+      item.correct === 1 ? 1 : 0
+    });"
               />
               <label for="opt${item.id}1"> ${item.op1}</label>
             </div>
@@ -77,6 +53,9 @@ quizQuestions.forEach((item) => {
                 type="radio"
                 name="opt${item.id}"
                 id="opt${item.id}2"
+                onclick="addScore(${item.id - 1},${
+      item.correct === 2 ? 1 : 0
+    });"
               />
               <label for="opt${item.id}2">  ${item.op2}</label>
             </div>
@@ -85,6 +64,9 @@ quizQuestions.forEach((item) => {
                 type="radio"
                 name="opt${item.id}"
                 id="opt${item.id}3"
+                onclick="addScore(${item.id - 1},${
+      item.correct === 3 ? 1 : 0
+    });"
               />
               <label for="opt${item.id}3">  ${item.op3}</label>
             </div>
@@ -93,43 +75,29 @@ quizQuestions.forEach((item) => {
                 type="radio"
                 name="opt${item.id}"
                 id="opt${item.id}4"
+                onclick="addScore(${item.id - 1},${
+      item.correct === 4 ? 1 : 0
+    });"
               />
          
              
               <label for="opt${item.id}4"> ${item.op4}</label>
             </div>
-                <div>${
-                  item.id > 1
-                    ? `<button type="button" class="button" onclick="showPrev('q${item.id}','q${
-                        item.id - 1
-                      }')">Prev</button>`
-                    : ``
-                }
-                </div>
+                 ${
+                   item.id > 1
+                     ? `<button type="button" onclick="showPrev('q${
+                         item.id
+                       }','q${item.id - 1}')">Prev</button>`
+                     : ``
+                 }
             <button id="button" type="submit">
-              Save & Next
+              Save and Next
             </button>
-          </form>`
-})
+          </form>`;
+  });
 
-var arr = []
-for (var i = 1; i <= 5; i++) arr[i] = "q" + i
-for (var i = 1; i <= 5; i++) setStyleDisplay("none", document.getElementById(arr[i]))
-var res = document.getElementById("res")
-var introduction = document.getElementById("introduction")
-var showproblems = document.getElementById("showproblems")
-var befres = document.getElementById("befres")
-var countdown = document.getElementById("countdown")
-
-setStyleDisplay("none", res, introduction, showproblems, befres, countdown)
-
-var attempt = [0, 0, 0, 0, 0]
-var attemp = [0, 0, 0, 0, 0]
-var score = [0, 0, 0, 0, 0]
-var scoreAc = [0, 0, 0, 0, 0]
-var questionArr = []
-var correctAnsArr = []
-var incorrectAnsArr = []
+  for (var i = 0; i < questionArr.length; i++) setStyleDisplay("none", document.getElementById(`q${i+1}`));
+}
 
 /**
  *
@@ -224,7 +192,7 @@ async function checkinitial(event, a, b) {
     document.getElementById("callByName").innerHTML = s
     // document.getElementById("callByName").style.display = "block";    /*--------------------*/
     await getQuesFromApi()
-     showQue(a, b)
+    showQue(a, b)
   }
 }
 
@@ -241,7 +209,7 @@ function showorHide() {
  * @param {*} a
  */
 function showques(a) {
-  for (var i = 1; i <= 5; i++) setStyleDisplay("none", document.getElementById(arr[i]))
+  for (var i = 1; i <= 5; i++) setStyleDisplay("none", document.getElementById(`q${i}`))
   setStyleDisplay("block", document.getElementById(a))
   setStyleDisplay("none", document.getElementById("befres"))
 }
@@ -329,44 +297,75 @@ function onSubmitBefres(event) {
 }
 
 async function getQuesFromApi() {
-  const result = await fetch(
-    "https://opentdb.com/api.php?amount=5&category=21&difficulty=easy&type=multiple"
-  )
+  const quizCategoryOption = quizCategory.options[quizCategory.selectedIndex];
+  const quizDifficultyOption = quizDifficulty.options[quizDifficulty.selectedIndex];
+  const baseUrl = 'https://opentdb.com/api.php';
+  const queryParams = {
+    "amount":5,
+    "type":"multiple"
+  }
+
+  if(quizDifficultyOption.value !== "any"){
+    queryParams["difficulty"] = quizDifficultyOption.value;
+  }
+
+  if(quizCategoryOption.value !== "any"){
+    queryParams["category"] = quizCategoryOption.value;
+  }
+
+  const url = new URL(baseUrl);
+  
+  Object.keys(queryParams).forEach((key) => {
+    url.searchParams.append(key,queryParams[key]);
+  });
+ 
+  const result = await fetch(url)
   const data = await result.json()
 
   data.results.forEach((loadedQuestion) => {
-    console.log(loadedQuestion)
     questionArr.push(loadedQuestion.question)
     correctAnsArr.push(loadedQuestion.correct_answer)
     incorrectAnsArr.push(loadedQuestion.incorrect_answers)
   })
 
-  generateQuestions(questionArr, correctAnsArr, incorrectAnsArr)
+
+  generateQuestionsList(questionArr, correctAnsArr, incorrectAnsArr)
 }
 
-function generateQuestions(questionArr, correctAnsArr, incorrectAnsArr) {
-  for (let i = 0; i < questionArr.length; i++) {
-    const questionSpan = document.getElementById(`question-content${i + 1}`)
+
+function generateQuestionsList(questionArr, correctAnsArr, incorrectAnsArr) {
+  
+  for(let i = 0;i < questionArr.length;i++){
     var temporaryTag = document.createElement("p")
     temporaryTag.innerHTML = questionArr[i]
-    questionSpan.textContent = temporaryTag.innerHTML
-    const randomCorrectOptionNum = Math.floor(Math.random() * 4)
+    const randomCorrectOptionNum = Math.floor(Math.random() * 4) + 1
     let incorrectAnsIdx = 0
-
-    for (let j = 0; j < 4; j++) {
-      const inputElement = document.getElementById(`opt${i + 1}${j + 1}`)
-      const labelElement = document.querySelector(`label[for="${inputElement.id}"]`)
-
-      const ifCorrectOption = j === randomCorrectOptionNum ? 1 : 0
-      inputElement.onclick = function () {
-        addScore(i, ifCorrectOption)
+    const questionObj = {
+      id : i+1,
+      title : temporaryTag.innerHTML,
+      op1 : undefined,
+      op2 : undefined,
+      op3 : undefined,
+      op4 : undefined,
+      correct : randomCorrectOptionNum
+    };
+    
+    for(let j = 1;j <= 4;j++){
+      if(j == randomCorrectOptionNum){
+        temporaryTag = document.createElement("p");
+        temporaryTag.innerHTML = correctAnsArr[i];
+        questionObj[`op${j}`] = temporaryTag.innerHTML;
       }
-
-      if (j === randomCorrectOptionNum) {
-        labelElement.textContent = correctAnsArr[i]
-      } else {
-        labelElement.textContent = incorrectAnsArr[i][incorrectAnsIdx++]
+      else{
+        temporaryTag = document.createElement("p");
+        temporaryTag.innerHTML = incorrectAnsArr[i][incorrectAnsIdx++];
+        questionObj[`op${j}`] = temporaryTag.innerHTML;
       }
     }
+
+    quizQuestions.push(questionObj);
   }
+
+  generateQuestionUI()
+
 }
