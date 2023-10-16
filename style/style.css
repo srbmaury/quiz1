@@ -28,7 +28,7 @@
   border: 2px solid grey;
   background: white;
   width: 750px;
-  height: 350px;
+  height: 450px;
   border-radius: 9px;
   padding-top: 30px;
   padding-left: 30px;
@@ -45,6 +45,19 @@
   font-size: 35px;
   text-shadow: 2px 2px 8px grey;
 }
+
+#category{
+  font-size: 35px;
+  text-shadow: 2px 2px 8px grey;
+  margin-top: 10px;
+}
+
+#difficulty{
+  font-size: 35px;
+  text-shadow: 2px 2px 8px grey;
+  margin-top: 10px;
+}
+
 #intro {
   padding-left: 16px;
 }
@@ -65,6 +78,18 @@
   border-radius: 5px;
   padding-left: 4px;
   box-shadow: 1px 1px 1px 1px grey;
+}
+
+select{
+  font-size: 20px;
+  width: 330px;
+  height: 40px;
+  margin-top: 20px;
+  border: 2px solid black;
+  border-radius: 5px;
+  padding-left: 4px;
+  box-shadow: 1px 1px 1px 1px grey;
+  margin-left: -40px;
 }
 
 #callByName {
@@ -126,7 +151,7 @@ ul li {
   font-weight: 900;
 }
 
-input {
+input{
   margin-top: 20px;
   margin-left: 40px;
 }
