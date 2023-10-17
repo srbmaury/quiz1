@@ -28,7 +28,6 @@
   border: 2px solid grey;
   background: white;
   width: 750px;
-  height: 450px;
   border-radius: 9px;
   padding-top: 30px;
   padding-left: 30px;
@@ -163,32 +162,32 @@ button {
   background-color: blueviolet;
   border: 0mm;
   color: white;
-  float: left;
   cursor: pointer;
   padding: 10px 20px;
   font-size: 20.7px;
-
+  word-break: keep-all;
 }
 
-#button {
+.next_button{
+  margin:20px;
   float: right;
-  margin-right: 110px;
-    /* border-radius: 10%; */
-   /* padding: 10px 15px 10px 15px; */
-    
+}
+
+.button,#return{
+  margin-right:auto;
 }
 
 .button:hover , #button:hover {
   border: 2px solid grey;
   color: rgb(21, 20, 20);
   background-color: rgb(187, 148, 223);
-  transform: scale(1.2);
+  transform: scale(1.1);
   transition: transform 1s ease-in-out;
 }
 
 #return:hover {
   border: 2px solid grey;
-  transform: scale(1.2);
+  transform: scale(1.1);
   transition: transform 1s ease-in-out;
   color: rgb(21, 20, 20);
   background-color: rgb(187, 148, 223);
@@ -257,14 +256,12 @@ button {
   transform: scale(1);
 }
 
-/* prev button code  */
+/* // button div code for allignment  */
 
-#q1 button,
-#q2 button,
-#q3 button,
-#q4 button,
-#q5 button {
-  margin-left: 30px;
+.buttondiv{
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
 }
 
 /* code end */
@@ -290,7 +287,6 @@ button {
   #board {
     background: white;
     width: min(100%-50px, 65vmin);
-    height: 40vh;
     border-radius: 9px;
     padding: 15px;
   }
@@ -330,6 +326,20 @@ button {
   #callByName {
     margin-right: -1px;
     margin-bottom: -2px !important;
+  }
+
+}
+
+
+/* // small device media queries for 768px  */
+
+@media (max-width:768px) {
+  #board {
+    height:auto;
+  }
+  
+  .next_button {
+  margin-top:130px;      
   }
 
 }
