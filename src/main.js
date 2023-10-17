@@ -77,24 +77,22 @@ function generateQuestionUI(){
                 id="opt${item.id}4"
                 onclick="addScore(${item.id - 1},${
       item.correct === 4 ? 1 : 0
-    });"
-              />
-         
-             
-              <label for="opt${item.id}4"> ${item.op4}</label>
+    });"/>
+           <label for="opt${item.id}4"> ${item.op4}</label>
             </div>
-                 ${
-                   item.id > 1
-                     ? `<button type="button" onclick="showPrev('q${
-                         item.id
-                       }','q${item.id - 1}')">Prev</button>`
-                     : ``
-                 }
-            <button id="button" type="submit">
-              Save and Next
-            </button>
-          </form>`;
-  });
+                <div class="buttondiv">${
+                  item.id > 1
+                    ? `<button type="button" class="button" onclick="showPrev('q${item.id}','q${
+                        item.id - 1
+                      }')">Prev</button>`
+                    : ``
+                }
+                <button id="button" type="submit">
+                Save & Next
+                </button>
+                </div>
+          </form>`
+})
 
   for (var i = 0; i < questionArr.length; i++) setStyleDisplay("none", document.getElementById(`q${i+1}`));
 }
